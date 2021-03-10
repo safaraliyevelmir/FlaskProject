@@ -1,0 +1,254 @@
+.col-3{
+    width: 25%;
+}
+@media screen and (max-width: 1200px){
+    #social2{
+        display: none;
+    }
+    .service4{
+       margin-top: 20px;
+    }
+    #menu{
+        width: 100%;
+    }
+    .content{
+        width: 105%;
+    }
+    .degreebar{
+        width: 275px;
+    }
+    .fa-graduation-cap{
+        top: 80px;
+        left: 375px;
+    }
+    .resume{
+        width: 105%;
+    }
+    .portfolio{
+        width: 105%;
+    }
+    .sercices{
+        margin-left: auto;
+        flex-wrap: wrap;
+    }
+    #mail{
+        margin-left: 60px;
+    }
+
+
+}
+@media screen and (max-width: 1000px){
+    .footer{
+        width: 150%;
+    }
+    .degreebar{
+        width: 400px;
+    }
+    .col-3{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    #mail{
+        margin-left: 140px;
+    }
+    .main{
+        width: 136%;
+    }
+    .portfolio{
+        width: 143%;
+    }
+    .resume{
+        width: 143%;
+    }
+    .resume1{
+        width: 100%;
+    }
+    .content{
+        width: 142%;
+    }
+
+    .profile-name{
+        line-height: 40px;
+        padding-top: 16px;
+    }
+    .name{
+        font-size: 25px;
+        display: block;
+    }
+    .job{
+        font-size: 20px;
+    }
+    }
+@media screen and (max-width: 998px){
+    #mail{
+        margin-left: 60px;
+    }
+    .footer{
+        width: 153%;
+    }
+}
+
+@media screen and (max-width: 995px){
+    #mail{
+        margin-left: 137px;
+    }
+}
+@media screen and (max-width: 990px){
+    #mail{
+        margin-left: 72px;
+    }
+    .service4{
+        margin-top: 30px;
+    }
+    .skill1{
+        margin-left: 70px;
+    }
+    .skill2{
+        margin-left: 70px;
+        margin-top: 30px;
+    }
+    .degreebar{
+        width: 400px;
+    }
+}
+ @media screen and (max-width: 768px){
+     /* Open Menu */
+     .openmenu{
+       width: 50px;
+       height: 100%;
+       border-left: solid 1px #eaeaea;
+       display: block;
+       margin-left: 100px;
+       
+    }
+    
+    .col-3{
+        padding-right: 0px;
+    }
+    .services{
+        margin-left: 80px;
+    }
+    .service1{
+        margin-right: 40px;
+    }
+    .service3{
+        margin-right: 40px;
+    }
+    .service4{
+        margin-top: 20px;
+    }
+    #social2{
+        display: block !important;
+    }
+
+    .openmenu i{
+        font-size: 25px;
+        display: flex;
+        justify-content: center;
+        padding-top: 7px;
+        position: relative;
+        top: -3%;
+        margin-right: -20px;
+    }
+    .col-9{
+        padding-right: 0px;
+    }
+    .col-sm-4{
+        padding-left: 0px;
+    }
+    .col-3{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .main{
+        width: 100%;
+    }
+    .content{
+        width: 150%;
+    }
+    .responsivmenu-ul{
+        display: block !important;
+    }
+    .li-resume h2{
+        line-height: 20px;
+    }
+    .fa-graduation-cap{
+        top: 690px;
+        left: 40px;
+    }
+    .resume{
+        width: 150%;
+        height: auto;
+    }
+    .history{
+        flex-direction: column;
+    }
+    .homebutton-r{
+        background-color: #d81300;
+        width: 68px;
+        height: 75px;
+        position: relative;
+        z-index: 1;
+    }
+    .homeicon-r i{
+        display: flex;
+        justify-content: center;
+        padding-top: 40%;
+        color: white;
+        position: relative;
+        z-index: 2;
+        font-size: 22px;
+    }
+    .main nav{
+        width: 136%;
+        display: flex;
+        justify-content: center;
+    }
+    #social2{
+        display: none;
+    }
+    #mail{
+        display: none;
+    }
+    .menu-ul{
+        display: none;
+    }
+    .service3{
+        margin-top: 20px;
+    }
+    .skills{
+        margin-left: 40px;
+    }
+    .skill2{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .degreebar{
+        width: 360px;
+    }
+    .footer{
+        width: 165%;
+    }
+    .footer h1{
+        display: none;
+    }
+    .footer h2{
+        text-align: center;
+        margin-top: 19px;
+    }
+    #social1{
+        display: block;
+    }
+}
+@media screen and (max-width: 570px){
+    #social2{
+        display: none !important;
+    }
+    #social1{
+        display: inline;
+    }
+}

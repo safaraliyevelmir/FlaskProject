@@ -1,0 +1,22 @@
+/* parent div */
+#parent{
+    width:100%;
+    position:relative;
+    border: 1px solid red;
+  }
+  
+  
+  /* child div 1 */
+  #parent .child-1{
+    width:25%;
+    position:fixed;
+    left:0%;
+    border: 1px solid blue;
+  }
+  /* child div 2 */
+  #parent .child-2{
+    width:75%;
+    position:fixed;
+    right:0%;
+    border: 1px solid black;
+  }
