@@ -1,0 +1,27 @@
+{% extends "admin/base.html" %}
+{% block page %}
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="my-3">Add New Portfolio Item</h1>
+        <form action="/admin/portfolionew" method="POST" enctype="multipart/form-data">
+          <div class="form-group my-3">
+            <input type="text" class="form-control" name="name" placeholder="Portfolio title">
+          </div>
+          <div class="form-group my-3">
+            <input type="text"  class="form-control" name="job" placeholder="Portfolio Subtitle">
+          </div>
+          <div class="form-group my-3">
+            <input type="file"  class="form-control" name="text" placeholder="Portfolio image">
+          </div>
+          <div class="form-group my-3">
+            <input type="text"  class="form-control" name="text" placeholder="Portfolio Text">
+          </div>
+          <div class="form-group my-3">
+            <input type=Submit  class="btn btn-success" name="Button" value="Add New Slide">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

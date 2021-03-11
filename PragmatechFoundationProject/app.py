@@ -1,26 +1,41 @@
 from flask import Flask,render_template, redirect, request
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.orm import backref
+from werkzeug.utils import secure_filename
+import os
 
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database/data.db'
+app.config['UPLOAD_PATH']='static/uploads'
 db = SQLAlchemy(app)
+
 
 
 class Slides(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     name=db.Column(db.String(20))
+    img=db.Column(db.String(120))
     job=db.Column(db.String(20))
     text=db.Column(db.String(50))
 
-
-
+class Portfolio(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    title=db.Column(db.String(20))
+    subtitle=db.Column(db.String(20))
+    text=db.Column(db.String(120))
+    
 # Main index route
 
 @app.route("/")
 def index():
     return render_template("app/index.html")
 
+# Main Portfolio
+
+@app.route("/portfolio-item")
+def portfolioitem():
+    return render_template("app/portfolio.html")
 # Admin index route
 
 @app.route("/admin")
@@ -30,7 +45,7 @@ def adminindex():
 
 # Admin addslider route
 
-@app.route("/admin/addslider",  method=['GET', 'POST'])
+@app.route("/admin/addslide",  methods=['GET', 'POST'])
 def adminaddslider():
     if request.method=='POST':
         slide=Slides(
@@ -38,7 +53,7 @@ def adminaddslider():
             job=request.form['job'],
             text=request.form['text']
         )
-        db.session.add(Slide)
+        db.session.add(slide)
         db.session.commit()
         return redirect("/admin/myslide")
     return render_template("admin/addslide.html")
@@ -47,6 +62,33 @@ def adminaddslider():
 
 @app.route("/admin/myslide")
 def slidercontent():
-    return render_template("admin/myslide.html")
+    slides=Slides.query.all()
+    return render_template("admin/myslide.html", slides=slides)
+
+# Portfolio Route
+@app.route("/admin/portfolio")
+def portfolio():
+    portfolio=Portfolio.query.all()
+    return render_template("admin/portfolio.html", portfolio=portfolio)
+
+# Add Portfolio item
+
+@app.route('/admin/portfolionew', methods=['GET', 'POST'])
+def newportfolio():
+    portfolio=Portfolio.query.all()
+    if request.method=='POST':
+        file=request.files['img']
+        filename=secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_PATH'],filename))
+        newportfolio=Portfolio(
+            title=request.form['title'],
+            text=request.form['subtitle'],
+            img=filename,
+            date=request.form['text']
+        )
+        db.session.add(newportfolio)
+        db.session.commit()
+        return redirect('/admin/portfolio')
+    return render_template("admin/newportfolio.html")
 if __name__ == "__main__":
     app.run(debug=True)
