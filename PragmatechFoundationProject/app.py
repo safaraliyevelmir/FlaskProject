@@ -88,7 +88,7 @@ def updateslider(id):
         slideforupdate.text=request.form['text']
         db.session.commit()
         return redirect("/")
-    return render_template("admin/slideupdate.html")
+    return render_template("admin/slideupdate.html", slider=slideforupdate)
 
 # Portfolio Route
 @app.route("/admin/portfolio")
