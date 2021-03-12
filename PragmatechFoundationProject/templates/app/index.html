@@ -363,14 +363,16 @@
           <div class="testmontional">
             <div class="wrapper">
               <div class="carousel owl-carousel">
+                {% for slide in slides %}
                 <div class="card card-1">
-                    <h2>Jack Garrat</h2>
-                    <h4>Freelancer</h4>
-                    <p>
-                        Great designer! he finished our work wonderfully and just in time. thanks for everything.
-                    </p>
+                  <h2>{{slide.name}}</h2>
+                  <h4>{{slide.job}}</h4>
+                  <p>
+                    {{slide.text}}
+                  </p>
                 </div>
-                <div class="card card-2">
+                {% endfor %}
+                <!-- <div class="card card-2">
                     <h2>Jack Garrat</h2>
                     <h4>Freelancer</h4>
            
@@ -417,7 +419,7 @@
                     <p>
                         Great designer! he finished our work wonderfully and just in time. thanks for everything.
                     </p>
-                </div>
+                </div> -->
               </div>
         </div>
           </div>
@@ -633,7 +635,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12" ">
+        <div class="col-12">
           <div class="footer">
               <h1>Elmir Safaraliyev</h1>
               <h2>© 2021 All Copyrights reserved. Designed by <span>Elmir Safaraliyev</span></h2>
@@ -643,7 +645,7 @@
       </div>
     </div>
   </div>
-  <script src="static/app/js/app.js"></script>
+  <script src="../../static/app/js/app.js"></script>
   <script>
     $(".carousel").owlCarousel({
       margin: 20,

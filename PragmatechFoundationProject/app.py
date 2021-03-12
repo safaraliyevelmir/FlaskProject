@@ -1,6 +1,5 @@
 from flask import Flask,render_template, redirect, request
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import backref
 from werkzeug.utils import secure_filename
 import os
 
@@ -23,19 +22,22 @@ class Portfolio(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     title=db.Column(db.String(20))
     subtitle=db.Column(db.String(20))
+    img=db.Column(db.String(120))
     text=db.Column(db.String(120))
     
 # Main index route
 
 @app.route("/")
 def index():
-    return render_template("app/index.html")
+    slides=Slides.query.all()
+    return render_template("app/index.html", slides=slides)
 
 # Main Portfolio
 
 @app.route("/portfolio-item")
 def portfolioitem():
     return render_template("app/portfolio.html")
+    
 # Admin index route
 
 @app.route("/admin")
@@ -55,7 +57,7 @@ def adminaddslider():
         )
         db.session.add(slide)
         db.session.commit()
-        return redirect("/admin/myslide")
+        return redirect("/")
     return render_template("admin/addslide.html")
 
 # Admin Slider Content route
@@ -64,6 +66,18 @@ def adminaddslider():
 def slidercontent():
     slides=Slides.query.all()
     return render_template("admin/myslide.html", slides=slides)
+
+
+# Delete Slider
+
+# @app.route('/delete/<int:id>', methods=['GET','POST'])
+# def delete(id):
+#     for item in user:
+#         if item['id']==id:
+#             users.remove(item)
+#             return redirect('/')
+#     return render_template('app/index.html')
+
 
 # Portfolio Route
 @app.route("/admin/portfolio")
@@ -90,5 +104,7 @@ def newportfolio():
         db.session.commit()
         return redirect('/admin/portfolio')
     return render_template("admin/newportfolio.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)

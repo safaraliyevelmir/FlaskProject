@@ -1,6 +1,7 @@
 function myFunction() {
     document.getElementById("menu1").style.display = "none";
     document.getElementById("menu2").style.display = "block"
+    document.getElementById("menu4").style.display = "none"
     document.getElementById("menu5").style.display = "none"
     document.getElementById("menu3").style.display = "none"
     document.getElementById("btn2").style.color = "#d81300"
@@ -13,6 +14,7 @@ function myFunction2() {
     document.getElementById("menu1").style.display = "block"
     document.getElementById("menu2").style.display = "none"
     document.getElementById("menu5").style.display = "none"
+    document.getElementById("menu4").style.display = "none"
     document.getElementById("menu3").style.display = "none"
     document.getElementById("btn5").style.color = "black"
     document.getElementById("btn2").style.color = "black"
@@ -23,6 +25,7 @@ function myFunction3() {
     document.getElementById("menu1").style.display = "none"
     document.getElementById("menu2").style.display = "none"
     document.getElementById("menu5").style.display = "none"
+    document.getElementById("menu4").style.display = "none"
     document.getElementById("menu3").style.display = "block"
     document.getElementById("btn3").style.color = "#d81300"
     document.getElementById("btn2").style.color = "black"
