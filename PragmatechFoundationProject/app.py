@@ -70,14 +70,25 @@ def slidercontent():
 
 # Delete Slider
 
-# @app.route('/delete/<int:id>', methods=['GET','POST'])
-# def delete(id):
-#     for item in user:
-#         if item['id']==id:
-#             users.remove(item)
-#             return redirect('/')
-#     return render_template('app/index.html')
+@app.route('/deleteslider/<id>')
+def deleteslider(id):
+        slideForDelete=Slides.query.get(id)
+        db.session.delete(slideForDelete)
+        db.session.commit()
+        return redirect('/admin/myslide')
 
+# Update Slider
+
+@app.route('/updateslider/<id>', methods=['GET', 'POST']) 
+def updateslider(id):
+    slideforupdate=Slides.query.get(id)
+    if request.method=='POST':
+        slideforupdate.name=request.form['name']
+        slideforupdate.job=request.form['job'] 
+        slideforupdate.text=request.form['text']
+        db.session.commit()
+        return redirect("/")
+    return render_template("admin/slideupdate.html")
 
 # Portfolio Route
 @app.route("/admin/portfolio")

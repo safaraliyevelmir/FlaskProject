@@ -23,8 +23,9 @@
               <td>{{slide.job}}</td>
               <td>{{slide.text}}</td>
               <td>
-                <a href="/delete/{{user['id']}}"><i class="bi bi-trash-fill"></i></a>
-                <a href=""><i class="bi bi-pencil"></i></a>
+                <a href="/deleteslider/{{slide.id}}"><i class="bi bi-trash-fill"></i></a>
+                <a href="/updateslider/{{slide.id}}"><i class="bi bi-pencil"></i></a>
+                <a href=""><i class="bi bi-folder2-open"></i></a>
               </td>
             </tr>
             {% endfor %}
