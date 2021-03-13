@@ -24,13 +24,24 @@ class Portfolio(db.Model):
     subtitle=db.Column(db.String(20))
     img=db.Column(db.String(120))
     text=db.Column(db.String(120))
-    
+
+class Aboutme(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    content=db.Column(db.String(20))
+
 # Main index route
 
 @app.route("/")
 def index():
     slides=Slides.query.all()
     return render_template("app/index.html", slides=slides)
+
+
+# Main Blog Single
+@app.route("/blog")
+def blog():
+    return render_template("app/singleblog.html")
+
 
 # Main Portfolio
 
@@ -42,8 +53,17 @@ def portfolioitem():
 
 @app.route("/admin")
 def adminindex():
-    slides=Slides.query.all()
-    return render_template("admin/index.html", slides=slides)
+    return render_template("admin/index.html")
+
+
+# Aboutme Edit Route
+
+# @app.route("/aboutmeedit",methods=['GET','POST'])
+# def aboutmeedit():
+#     if request.metod=='POST':
+#         aboutmeedit=request.form['content']
+#         return redirect('/')
+#     return render_template("admin/aboutmeedit.html", abotmeedit=aboutmeedit)
 
 # Admin addslider route
 
@@ -58,14 +78,14 @@ def adminaddslider():
         db.session.add(slide)
         db.session.commit()
         return redirect("/")
-    return render_template("admin/addslide.html")
+    return render_template("admin/slider.html")
 
-# Admin Slider Content route
+# Admin Slider route
 
 @app.route("/admin/myslide")
-def slidercontent():
+def slider():
     slides=Slides.query.all()
-    return render_template("admin/myslide.html", slides=slides)
+    return render_template("admin/slider.html", slides=slides)
 
 
 # Delete Slider

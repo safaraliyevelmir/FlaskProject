@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <!--CSS-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../static/app/css/style.css">
+        <link rel="stylesheet" href="../../static/app/css/grid.css">
+        <link rel="stylesheet" href= "../../static/app/css/grid2.css">
+        <link rel="stylesheet" href="../../static/app/css/blogsingle.css">
+        <title>Block Single</title>
+      
+          <!--Fontlar-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+      </head>
+</head>
+<body>
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <!--Profile Hissəsi-->
+          <div class="profile">
+            <div class="profile-name">
+              <span class="name">
+                HENRY ROONEY
+              </span>
+              <span class="job">
+                Creative Designer
+              </span>
+            </div>
+            <div class="profile-image">
+              <img src="static/app/img/pp2.jpg">
+            </div>
+            <div class="profile-info">
+              <ul class="profileinfolist">
+                  <li class="profileinfoitem">
+                    <p>
+                      <span>Name:</span>
+                      Chris Johnson
+                    </p>
+                  </li>
+                  <li class="profileinfoitem">
+                    <p>
+                      <span>Job:</span>
+                      Freelancer
+                    </p>
+                  </li>
+                  <li class="profileinfoitem">
+                    <div class="edudivlist">
+                      <span class="profileinfo-edu">Skype</span>
+                      <span class="edulist">
+                        henryrooney85
+                      </span>
+                    </div>
+                  </li>
+                  <li class="profileinfoitem">
+                    <p>
+                      <span>Mail:</span>
+                      henry@domain.com
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            <div class="cvbutton">
+              <div class="cvbuttonbox">
+                <a class="cvdownload" href="">CV Download</a>
+                <div class="downloadiconbox">
+                  <i class="fas fa-download dwiconbox"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-9">
+          <!--Main Hissəsi-->
+          <div class="main">
+            <nav>
+              <!--Menu Hissəsi-->
+              <div class="row" id="menu">
+                <div class="col-md-8 col-sm-8 col-xs-4" id="menumain">
+                  <ul class="menu-ul">
+                    <li> <a href="/">
+                        <div class="homebutton">
+                          <i class="fas fa-home"></i>
+                        </div>
+                      </a>
+                    </li>
+                    <li> <a class="li" onclick="myFunction4()" href="/#blog">Back to Blog Page</a></li>
+                  </ul>
+                  <ul class="responsivmenu-ul" style="display: none;">
+                    <div class="homebutton-r">
+                      <div class="homeicon-r">
+                        <i class="fas fa-home"></i>
+                      </div>
+                    </div>
+                  </ul>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-8 dynamic" id="social1">
+                  <div class="hidden-md social-icons pull-right" id="social2">
+                    <a class="fb">
+                      <i class="fa fa-facebook face" id="socialmedia"></i>
+                    </a>
+                    <a class="insta">
+                      <i class="fab fa-instagram instagram" id="socialmedia"></i>
+                    </a>
+                    <a class="linked">
+                      <i class="fab fa-linkedin-in linkedin" id="socialmedia"></i>
+                    </a>
+                  </div>
+                  <div id="mail">
+                    <div id="mailbox">
+                      <a id="mailto" href="mailto: abc@example.com">Mail me</a>
+                      <div id="mailiconbox">
+                        <i id="mailicon" class="fab fa-telegram-plane"></i>
+                      </div>
+                  
+                    </div>
+                  </div>
+                  <button style="outline: none; border: none; background: none;" class="openmenu" onclick="openmenu()" >
+                    <i class="fas fa-align-justify"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="openmenu-ul close" id="openmenu">
+                <ul>
+                  <li> <a class=""  id="btn2" onclick="myFunction()">Resume</a></li>
+                  <li> <a class="" id="btn3" onclick="myFunction3()">Portfolio</a></li>
+                  <li> <a class="" id="btn4" >Blog</a></li>
+                  <li> <a class="" id="btn5" onclick="myFunction5()">Contact</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+            <!--Content Hissəsi-->
+          <div class="col-12">
+            <div class="singleblog">
+              <div class="blogcontents">
+                <div class="blogmain">
+                  <div class="singleblogcontent">
+                    <div class="blogimgframe">
+                      <img src="static/app/img/blog-1.jpg" alt="">
+                    </div>
+                    <div class="singleblogheader">
+                      <h1>
+                        Doing business like this takes much more effort than doing your own business
+                      </h1>
+                    </div>
+                    <div class="blogcontent">
+                      <p>
+                        For instance, whenever I go back to the guest house during the morning to copy out the contract, these gentlemen are always still sitting there eating their breakfasts.              
+                        <br><br>
+                        I ought to just try that witht my boss; I'd get kicked out on the spot. But who knows, maybe that would be the best thing for me. He'd fall right off his desk! And it's a funny sort of business to be sitting up there at your desk, talking down at your subordinates.
+                        <br><br>
+                        <span>
+                          "Oh, God", he thought, "what a strenuous career it is that I've chosen! Travelling day in and day out.”
+                        </span>
+                        <br><br>
+                        Doing business like this takes much more effort than doing your own business at home, and on top of that there's the curse of travelling, worries about making train connections, bad and irregular food, contact with different people all the time so that you can never get to know anyone or become friendly with them. It can all go to Hell!
+                        <br><br>
+                        His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="blogmenu">
+                  <div class="singleblogmenu">
+                    <div class="categories">
+                      <div class="categories-header">
+                        <h1>Categories</h1>
+                        <span></span>
+                      </div>
+                      <div class="catagory">
+                        <ul>
+                          <li><a href="">Web Desigin</a></li>
+                          <li><a href="">Development</a></li>
+                          <li><a href="">Photography</a></li>
+                          <li><a href="">Branding</a></li>
+                          <li><a href="">Other</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="related-posts"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="footer">
+                <h1>Elmir Safaraliyev</h1>
+                <h2>© 2021 All Copyrights reserved. Designed by <span>Elmir Safaraliyev</span></h2>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../../static/app/js/app.js"></script>
+  </body>
+</html>
