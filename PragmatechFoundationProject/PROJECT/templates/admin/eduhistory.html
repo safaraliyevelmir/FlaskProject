@@ -1,0 +1,64 @@
+{% extends "admin/base.html" %}
+{% block pages %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 mt-4">
+            <h1>Add Education History</h1>
+            <form action="/admin/addeduhistory" method="POST">
+                <div class="form-group mt-3">
+                    <input type="text" class="form-control" name="edutitle" placeholder="Title">
+                </div>
+                <div class="form-group mt-3">
+                    <input type="text" class="form-control" name="edustartdate" placeholder="Start Date">
+                </div>
+                <div class="form-group mt-3">
+                    <input type="text" class="form-control" name="eduenddate" placeholder="End Date">
+                </div>
+                <div class="form-group mt-3">
+                    <textarea class="form-control" name="edutext" placeholder="Text" rows="5"></textarea>
+                </div>
+                <div class="form-group mt-3">
+                    <input type="submit" class="btn btn-success" name="button" value="Add">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<section class="addslider mt-4">
+    <div class="container mb-5">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="my-3">Education History</h1>
+          <table class="table mt-4">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Action</th>              
+              </tr>
+            </thead>
+            <tbody>
+              {% for eduhistory in eduhistorys %}
+              <tr>
+                <th scope="row">{{eduhistory.id}}</th>
+                <td>{{eduhistory.title}}</td>
+                <td>{{eduhistory.startdate}}</td>
+                <td>{{eduhistory.enddate}}</td>
+                <td>
+                  <a href="/deleteeduhistory/{{eduhistory.id}}"><i class="bi bi-trash-fill"></i></a>
+                  <a href="/updateeduhistory/{{eduhistory.id}}"><i class="bi bi-pencil"></i></a>
+                  <a href="/admin/edudetail/{{eduhistory.id}}"><i class="bi bi-folder2-open"></i></a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+</section>
+
+{% endblock %}
