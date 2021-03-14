@@ -1,0 +1,120 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.contact{
+    margin-top: 37px;
+    width: 107%;
+    height: 979px;
+    border-radius: 8px;
+    margin-left: -15px;
+    background-color: white;
+    padding-top: 48px;
+}
+.contactsdiv{
+    padding-left: 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        ".contact-send .contact-info";
+}
+.contact-title{
+    position: relative;
+    display: inline-block;
+}
+.contact-title span{
+    background-color: #ea2c19;
+    position: absolute;
+    height: 7px;
+    width: 100%;
+    bottom: 0;
+    opacity: 0.4;
+}
+.contact-title h1{
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    line-height: 20px;
+    color: #333333;
+    letter-spacing: 1px;
+}
+.form{
+    padding-top: 35px;
+}
+.contact-btn{
+    margin-top: 30px;
+}
+.contact-btn button{
+    background-color: #d81300;
+    border-radius: 15px;
+    width: 120px;
+    height: 30px;
+    border: none;
+    outline: none;
+    color: white;
+}
+.contact-btn button:hover{
+    cursor: pointer;
+    background-color: #ea2c19;
+}
+.form input{
+    border-bottom: 0.5px solid #dfdfdf;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    width: 175px;
+    height: 35px;
+    font-family: 'Roboto', sans-serif;
+}
+.input1{
+    margin-left: 10px;
+}
+.form textarea {
+    outline: none;
+    border-bottom: 0.5px solid #dfdfdf;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding-top: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contact-info ul{
+    margin-top: 20px;
+
+}
+.contact-info ul li span{
+    font-weight: 400;
+    line-height: 34px;
+    font-size: 15px;
+    color: #000000;
+}
+.contact-info ul li p{
+    display: inline;
+    font-weight: 400;
+    line-height: 34px;
+    color: #787878;
+    font-size: 15px;
+    
+}
+.social-contact{
+    margin-top: 30px;
+}
+.social-contact a  i:hover{
+    transform: scale(1.5, 1.5);
+   
+}
+.social-contact a .fa-instagram:hover{
+    color: purple;
+}
+.social-contact a .fa-linkedin-in:hover{
+    color: blue;
+}
+.social-contact i{
+    padding: 5px;
+}
+.social-contact a{
+   color: black;
+}
