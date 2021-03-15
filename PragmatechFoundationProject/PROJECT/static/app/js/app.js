@@ -59,6 +59,18 @@ function myFunction5() {
 }
   
 
+function filter() {
+  var elems = document.getElementsByClassName( 'other' );
+  for ( var i = 0, l = elems.length; i < l; i++ )
+    elems[ i ].style.display = 'block';
+  var elems = document.getElementsByClassName( 'cv' );
+  for ( var i = 0, l = elems.length; i < l; i++ )
+     elems[ i ].style.display = 'block';
+  document.getElementById("all1").style.color = "#d81300"
+  document.getElementById("cv1").style.color = "#787878"
+  document.getElementById("other1").style.color = "#787878"
+
+}
 function filter2() {
     var elems = document.getElementsByClassName( 'other' );
     for ( var i = 0, l = elems.length; i < l; i++ )

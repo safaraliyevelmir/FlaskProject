@@ -508,12 +508,6 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 70px;
-  grid-template-areas:
-    ".skill1 .skill2"; */
   padding-left: 30px;
   padding-top: 55px;
  
@@ -528,12 +522,9 @@ body {
   font-weight: 500;
   color: #333333;
 }
-.skill1{
+.skill{
   height: auto;
-  margin-right: 60px;
-}
-.skill2{
-  height: auto;
+  margin-right: 30px;
 }
 .skilltitle{
   position: relative;
