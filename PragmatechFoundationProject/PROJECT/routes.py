@@ -9,7 +9,8 @@ from flask import request
 def index():
     slides=Slides.query.all()
     eduhistorys=Eduhistory.query.all()
-    return render_template('app/index.html', slides=slides, eduhistorys=eduhistorys)
+    workhistorys=Workhistory.query.all()
+    return render_template('app/index.html', slides=slides, eduhistorys=eduhistorys, workhistorys=workhistorys)
 
 # Main Portfolio Singe
 
@@ -121,6 +122,7 @@ def updateeduhistory(id):
     return render_template('/admin/updateeduhistory.html', eduhistory=updateeduhistory)
 
 # Education History Detail
+
 @app.route('/admin/edudetail/<id>')
 def edudetail(id):
     eduhistorydetail=Eduhistory.query.get(id)
@@ -128,22 +130,53 @@ def edudetail(id):
 
 # Working History
 
-# @app.route('/workhistory')
-# def workhistory():
-#     workhistorys=Workhistory.query.all()
-#     return render_template('/admin/workhistory.html', workhistorys=workhistorys)
+@app.route('/workhistory')
+def workhistory():
+    workhistorys=Workhistory.query.all()
+    return render_template('/admin/workhistory.html', workhistorys=workhistorys)
 
-# @app.route('/admin/addworkhistory', methods=['POST', 'GET'])
-# def addeduhistory():
-#     if request.method=='POST':
-#         workhistory=Workhistory(
-#             title=request.form['worktitle'],
-#             startdate=request.form['workstartdate'],
-#             enddate=request.form['workenddate'],
-#             text=request.form['worktext']
-#         )
-#         db.session.add(workhistory)
-#         db.session.commit()
-#         return redirect('/')
-#     return render_template('/admin/workhistory.html')
+# Add Work History
 
+@app.route('/admin/addworkhistory', methods=['POST', 'GET'])
+def addworkhistory():
+    if request.method=='POST':
+        workhistory=Workhistory(
+            title=request.form['worktitle'],
+            startdate=request.form['workstartdate'],
+            enddate=request.form['workenddate'],
+            text=request.form['worktext']
+        )
+        db.session.add(workhistory)
+        db.session.commit()
+        return redirect('/')
+    return render_template('/admin/workhistory.html')
+
+# Delete Work History
+
+@app.route('/deleteworkhistory/<id>')
+def deleteworkhistory(id):
+    workdeletehistory=Workhistory.query.get(id)
+    db.session.delete(workdeletehistory)
+    db.session.commit()
+    return redirect('/workhistory')
+
+# Update Work History
+
+@app.route('/updateworkhistory/<id>', methods=['GET','POST'])
+def updateworkhistory(id):
+    updateworkhistory=Workhistory.query.get(id)
+    if request.method=='POST':
+        updateworkhistory.title=request.form['worktitle']
+        updateworkhistory.startdate=request.form['workstartdate']
+        updateworkhistory.enddate=request.form['workenddate']
+        updateworkhistory.text=request.form['worktext']
+        db.session.commit()
+        return redirect('/')
+    return render_template('/admin/updateworkhistory.html', workhistory=updateworkhistory)
+
+# Work History Detail
+
+@app.route('/admin/workhistorydetail/<id>')
+def workhistorydetail(id):
+    workhistorydetail=Workhistory.query.get(id)
+    return render_template('/admin/workhistorydetail.html', workhistory=workhistorydetail)

@@ -306,6 +306,23 @@
                       </p>
                     </li>
                     {% endfor %}
+                  </ul>
+                </div>
+                <div class="resume2 resume1">
+                  <ul>
+                    <li class="li-resume-header">
+                      <i class="fa fa-graduation-cap"></i>
+                      <p>Working History</p>
+                    </li>
+                    {% for workhistory in workhistorys %}
+                    <li class="li-resume">
+                      <h2>{{workhistory.title}}</h2>
+                      <span>{{workhistory.startdate}} - {{workhistory.enddate}}</span>
+                      <p>
+                        {{workhistory.text}}  0
+                      </p>
+                    </li>
+                    {% endfor %}
                     <!-- <li class="li-resume">
                       <h2>Art Director - Facebook Inc</h2>
                       <span>2010 - Present</span>
@@ -322,38 +339,6 @@
                         by unwilling listening. Thing do taste on we manor.
                       </p>
                     </li> -->
-                  </ul>
-                </div>
-                <div class="resume2 resume1">
-                  <ul>
-                    <li class="li-resume-header">
-                      <i class="fa fa-graduation-cap"></i>
-                      <p>Working History</p>
-                    </li>
-                    <li class="li-resume">
-                      <h2>Art Director - Facebook Inc</h2>
-                      <span>2010 - Present</span>
-                      <p>
-                        Expenses as material breeding insisted building to in. Continual so distrusts pronounce 
-                        by unwilling listening. Thing do taste on we manor.
-                      </p>
-                    </li>
-                    <li class="li-resume">
-                      <h2>Art Director - Facebook Inc</h2>
-                      <span>2010 - Present</span>
-                      <p>
-                        Expenses as material breeding insisted building to in. Continual so distrusts pronounce 
-                        by unwilling listening. Thing do taste on we manor.
-                      </p>
-                    </li>
-                    <li class="li-resume">
-                      <h2>Art Director - Facebook Inc</h2>
-                      <span>2010 - Present</span>
-                      <p>
-                        Expenses as material breeding insisted building to in. Continual so distrusts pronounce 
-                        by unwilling listening. Thing do taste on we manor.
-                      </p>
-                    </li>
                   </ul>
                 </div>
               </div>
