@@ -1,6 +1,7 @@
 from PROJECT import app
 from PROJECT import app, db
 
+
 class Slides(db.Model):
     __tablename__='slider'
     id=db.Column(db.Integer,primary_key=True)
@@ -23,4 +24,17 @@ class Workhistory(db.Model):
     startdate=db.Column(db.String(40))
     enddate=db.Column(db.String(40))
     text=db.Column(db.String(100))
+
     
+class Aboutme(db.Model):
+    __tablename__='Aboutme'
+    id=db.Column(db.Integer,primary_key=True)
+    content=db.Column(db.String(120))
+
+ 
+class MyService(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    servicetitle=db.Column(db.String(50))
+    serviceicon =db.Column(db.String(40))
+    serviceimage=db.Column(db.String(120))
+    servicesubtitle=db.Column(db.String(50))

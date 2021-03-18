@@ -1,9 +1,15 @@
 {% extends "admin/base.html" %}
+{% block header %}
+
+<title>Update Testimonials</title>
+
+{% endblock %}
 {% block pages %}
 <div class="container">
   <div class="row">
       <div class="col-12 mt-4">
-          <h1>Slider</h1>
+        <a class="btn btn-primary" href="/slider" role="button">Back</a>
+          <h1 class="mt-4">Update Testimonials</h1>
           <form action="/updateslide/{{slide.id}}" method="POST">
               <div class="form-group mt-3">
                   <input type="text" class="form-control" name="name" value="{{slide.name}}">

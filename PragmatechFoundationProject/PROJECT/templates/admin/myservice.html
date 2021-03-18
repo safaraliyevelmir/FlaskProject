@@ -1,29 +1,30 @@
 {% extends "admin/base.html" %}
+
 {% block header %}
-
-<title>Admin Work History</title>
-
+<title>Admin My Service</title>
 {% endblock %}
+
 {% block pages %}
+
 <div class="container">
     <div class="row">
         <div class="col-12 mt-4">
-            <h1>Add Work History</h1>
-            <form action="/admin/addworkhistory" method="POST">
+            <h1>Add Service</h1>
+            <form action="/admin/addservice" method="POST" enctype="multipart/form-data">
                 <div class="form-group mt-3">
-                    <input type="text" class="form-control" name="worktitle" placeholder="Title">
+                    <input type="text" class="form-control" name="servicetitle" placeholder="title">
                 </div>
                 <div class="form-group mt-3">
-                    <input type="text" class="form-control" name="workstartdate" placeholder="Start Date">
+                    <input type="file" type="text" class="form-control" name="serviceimage" placeholder="image">
                 </div>
                 <div class="form-group mt-3">
-                    <input type="text" class="form-control" name="workenddate" placeholder="End Date">
+                    <input type="text" class="form-control" name="serviceicon" placeholder="Icon">
                 </div>
                 <div class="form-group mt-3">
-                    <textarea class="form-control" name="worktext" placeholder="Text" rows="5"></textarea>
+                    <input type="text" class="form-control" name="servicesubtitle" placeholder="subtitle">
                 </div>
                 <div class="form-group mt-3">
-                    <input type="submit" class="btn btn-success" name="button" value="Add">
+                    <button type="submit" class="btn btn-success" name="button">Add</button>
                 </div>
             </form>
         </div>
@@ -45,16 +46,16 @@
               </tr>
             </thead>
             <tbody>
-                {% for workhistory in workhistorys %}
+                {% for myservice in myservice %}
                 <tr>
-                    <th scope="row">{{workhistory.id}}</th>
-                    <td>{{workhistory.title}}</td>
-                    <td>{{workhistory.startdate}}</td>
-                    <td>{{workhistory.enddate}}</td>
+                    <th scope="row">{{myservice.id}}</th>
+                    <td>{{myservice.serivicetitle}}</td>
+                    <td>{{myservice.serviceicon}}</td>
+                    <td>{{myservice.servicesubtitle}}</td>
                     <td>
-                      <a href="/deleteworkhistory/{{workhistory.id}}"><i class="bi bi-trash-fill"></i></a>
-                      <a href="/updateworkhistory/{{workhistory.id}}"><i class="bi bi-pencil"></i></a>
-                      <a href="/admin/workhistorydetail/{{workhistory.id}}"><i class="bi bi-folder2-open"></i></a>
+                      <a href=""><i class="bi bi-trash-fill"></i></a>
+                      <a href=""><i class="bi bi-pencil"></i></a>
+                      <a href=""><i class="bi bi-folder2-open"></i></a>
                     </td>
                   </tr>
                 {% endfor %}

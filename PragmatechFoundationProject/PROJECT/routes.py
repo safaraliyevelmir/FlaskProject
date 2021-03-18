@@ -1,7 +1,8 @@
 from PROJECT import app
-from flask import render_template, redirect
+from flask import Flask, flash, request, redirect, url_for,render_template
 from .data import *
-from flask import request
+from werkzeug.utils import secure_filename
+import os
 
 # Main Index
 
@@ -10,7 +11,9 @@ def index():
     slides=Slides.query.all()
     eduhistorys=Eduhistory.query.all()
     workhistorys=Workhistory.query.all()
-    return render_template('app/index.html', slides=slides, eduhistorys=eduhistorys, workhistorys=workhistorys)
+    aboutme=Aboutme.query.all()
+    myservice=MyService.query.all()
+    return render_template('app/index.html', slides=slides, eduhistorys=eduhistorys, workhistorys=workhistorys, aboutme=aboutme, myservice=myservice)
 
 # Main Portfolio Singe
 
@@ -30,12 +33,69 @@ def blog():
 def admin():
     return render_template('admin/index.html')
 
+
+# Aboutme
+
+@app.route('/admin/aboutme')
+def aboutme():
+    aboutme=Aboutme.query.all()
+    return render_template('admin/aboutme.html', aboutme=aboutme)
+
+# Add Aboutme
+
+@app.route('/admin/addabout', methods=['GET','POST'])
+def addabout():
+    if request.method=='POST':
+        aboutme=Aboutme(
+            content=request.form['content']
+        )
+        db.session.add(aboutme)
+        db.session.commit()
+        return redirect('/')
+    return render_template('admin/aboutmeadd.html')
+
+# Aboutme Edit
+
+@app.route('/admin/aboutmeedit/<id>', methods=['GET','POST'])
+def editabout(id):
+    updateaboutme=Aboutme.query.get(id)
+    if request.method=='POST':
+        updateaboutme.content=request.form['content']
+        db.session.commit()
+        return redirect('/')
+    return render_template('/admin/aboutmeedit.html', aboutme=updateaboutme)
+
+# My Service
+
+@app.route('/admin/myservice')
+def myservice():
+    return render_template('admin/myservice.html')
+
+# Add My Service
+
+@app.route('/admin/addservice', methods=['GET','POST'])
+def addservice():
+    if request.method=='POST':
+        file=request.files['serviceimage']
+        filename=secure_filname(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+        myservice=MyService(
+            servicetitle=request.form['servicetitle'],
+            serviceicon=request.form['serviceicon'],
+            serviceimage=filename,
+            servicesubtitle=request.form['servicesubtitle']
+        )
+        db.session.add(myservice)
+        db.session.commit()
+        return redirect('/')
+    return render_template('admin/myservice.html')
 # Slider
 
 @app.route('/slider')
 def slider():
     slides=Slides.query.all()
     return render_template('admin/slider.html', slides=slides)
+
 
 # Add Slide
 
