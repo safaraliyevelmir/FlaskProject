@@ -69,7 +69,8 @@ def editabout(id):
 
 @app.route('/admin/myservice')
 def myservice():
-    return render_template('admin/myservice.html')
+    myservice=MyService.query.all()
+    return render_template('admin/myservice.html', myservice=myservice)
 
 # Add My Service
 
