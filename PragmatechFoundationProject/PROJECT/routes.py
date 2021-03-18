@@ -77,7 +77,7 @@ def myservice():
 def addservice():
     if request.method=='POST':
         file=request.files['serviceimage']
-        filename=secure_filname(file.filename)
+        filename=secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
         myservice=MyService(
             servicetitle=request.form['servicetitle'],
