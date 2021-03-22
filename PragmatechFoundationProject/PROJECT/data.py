@@ -51,20 +51,21 @@ class Catagory(db.Model):
 
     post_catagory=db.relationship('BlogPost', backref='catagory', lazy=True)
 
-
 tags_blogs = db.Table('tags_blogs',
     db.Column('tag_id', db.Integer, db.ForeignKey('Tags.id'), primary_key=True),
-    db.Column('blog_id', db.Integer, db.ForeignKey('BlogPost.id'), primary_key=True)
-)
+    db.Column('blog_id', db.Integer, db.ForeignKey('BlogPost.id'), primary_key=True))
 
 class BlogPost(db.Model):
     __tablename__="BlogPost"
     id=db.Column(db.Integer,primary_key=True)
+    url=db.Column(db.String(50))
     title=db.Column(db.String(50))
     subtitle=db.Column(db.String(50))
     img=db.Column(db.String(120))
     date=db.Column(db.DateTime(50))
     content=db.Column(db.Text)
+    
+
     catagory_post=db.Column(db.Integer, db.ForeignKey(Catagory.id))
     tags = db.relationship('Tags', secondary=tags_blogs, lazy='subquery',
         backref=db.backref('BlogPost', lazy=True))

@@ -10,7 +10,7 @@
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <style>
-    textarea{
+    textarea {
         font-family: 'Roboto', sans-serif;
     }
 </style>
@@ -31,15 +31,17 @@
                     </ol>
                 </div>
                 <h4 class="page-title">Edit Work History</h4>
-            </div><!--end page-title-box-->
-        </div><!--end col-->
+            </div>
+            <!--end page-title-box-->
+        </div>
+        <!--end col-->
     </div>
     <!-- end page title end breadcrumb -->
     <div class="row">
         <div class="col-lg-12">
             <a class="btn btn-primary" href="/admin/aboutmeedit" role="button">Back</a>
             <div class="card mt-4">
-                <div class="card-body">        
+                <div class="card-body">
                     <h4 class="mt-0 header-title">Add Aboutme from here</h4>
                     <form action="/admin/addabout" method="POST">
                         <textarea name="content" id="aboutmedit"></textarea>
@@ -47,21 +49,25 @@
                             <input type="submit" class="btn btn-success" name="button" value="Update">
                         </div>
                     </form>
-                </div><!--end card-body-->
-            </div><!--end card-->
-        </div><!--end col-->
-    </div><!--end row-->
+                </div>
+                <!--end card-body-->
+            </div>
+            <!--end card-->
+        </div>
+        <!--end col-->
+    </div>
+    <!--end row-->
 </div><!-- container -->
 
 <script>
-    $(document).ready(function() {
-    $('#aboutmedit').summernote();
-  });
-  $('#aboutmedit').summernote({
-  height: 300,                 // set editor height
-  minHeight: null,             // set minimum height of editor
-  maxHeight: null,             // set maximum height of editor
-  focus: true                  // set focus to editable area after initializing summernote
-});
+    $(document).ready(function () {
+        $('#aboutmedit').summernote();
+    });
+    $('#aboutmedit').summernote({
+        height: 300, // set editor height
+        minHeight: null, // set minimum height of editor
+        maxHeight: null, // set maximum height of editor
+        focus: true // set focus to editable area after initializing summernote
+    });
 </script>
 {% endblock %}

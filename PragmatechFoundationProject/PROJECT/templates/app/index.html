@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="static/app/css/resume.css">
   <link rel="stylesheet" href="static/app/css/contact.css">
   <link rel="stylesheet" href="static/app/css/portfolio.css">
-  <link rel="stylesheet" href= "static/app/css/grid2.css">
+  <link rel="stylesheet" href="static/app/css/grid2.css">
   <link rel="stylesheet" href="static/app/css/blog.css">
   <title>CV</title>
 
@@ -32,9 +32,9 @@
 
 
   <!-- Slider -->
-   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 </head>
 
 <body>
@@ -56,34 +56,34 @@
           </div>
           <div class="profile-info">
             <ul class="profileinfolist">
-                <li class="profileinfoitem">
-                  <p>
-                    <span>Name:</span>
-                    Chris Johnson
-                  </p>
-                </li>
-                <li class="profileinfoitem">
-                  <p>
-                    <span>Job:</span>
-                    Freelancer
-                  </p>
-                </li>
-                <li class="profileinfoitem">
-                  <div class="edudivlist">
-                    <span class="profileinfo-edu">Skype</span>
-                    <span class="edulist">
-                      henryrooney85
-                    </span>
-                  </div>
-                </li>
-                <li class="profileinfoitem">
-                  <p>
-                    <span>Mail:</span>
-                    henry@domain.com
-                  </p>
-                </li>
-              </ul>
-            </div>
+              <li class="profileinfoitem">
+                <p>
+                  <span>Name:</span>
+                  Chris Johnson
+                </p>
+              </li>
+              <li class="profileinfoitem">
+                <p>
+                  <span>Job:</span>
+                  Freelancer
+                </p>
+              </li>
+              <li class="profileinfoitem">
+                <div class="edudivlist">
+                  <span class="profileinfo-edu">Skype</span>
+                  <span class="edulist">
+                    henryrooney85
+                  </span>
+                </div>
+              </li>
+              <li class="profileinfoitem">
+                <p>
+                  <span>Mail:</span>
+                  henry@domain.com
+                </p>
+              </li>
+            </ul>
+          </div>
           <div class="cvbutton">
             <div class="cvbuttonbox">
               <a class="cvdownload" href="">CV Download</a>
@@ -102,14 +102,14 @@
             <div class="row" id="menu">
               <div class="col-md-8 col-sm-8 col-xs-4" id="menumain">
                 <ul class="menu-ul">
-                  <li> 
+                  <li>
                     <a>
                       <div class="homebutton" id="btn1" onclick="myFunction2()">
                         <i class="fas fa-home"></i>
                       </div>
                     </a>
                   </li>
-                  <li> <a class="li"  id="btn2" onclick="myFunction()">Resume</a></li>
+                  <li> <a class="li" id="btn2" onclick="myFunction()">Resume</a></li>
                   <li> <a class="li" id="btn3" onclick="myFunction3()">Portfolio</a></li>
                   <li> <a class="li" id="btn4" onclick="myFunction4()">Blog</a></li>
                   <li> <a class="li" id="btn5" onclick="myFunction5()">Contact</a></li>
@@ -140,19 +140,19 @@
                     <div id="mailiconbox">
                       <i id="mailicon" class="fab fa-telegram-plane"></i>
                     </div>
-                
+
                   </div>
                 </div>
-                <button style="outline: none; border: none; background: none;" class="openmenu" onclick="openmenu()" >
+                <button style="outline: none; border: none; background: none;" class="openmenu" onclick="openmenu()">
                   <i class="fas fa-align-justify"></i>
                 </button>
               </div>
             </div>
             <div class="openmenu-ul close" id="openmenu">
               <ul>
-                <li> <a class=""  id="btn2" onclick="myFunction()">Resume</a></li>
+                <li> <a class="" id="btn2" onclick="myFunction()">Resume</a></li>
                 <li> <a class="" id="btn3" onclick="myFunction3()">Portfolio</a></li>
-                <li> <a class="" id="btn4" >Blog</a></li>
+                <li> <a class="" id="btn4">Blog</a></li>
                 <li> <a class="" id="btn5" onclick="myFunction5()">Contact</a></li>
               </ul>
             </div>
@@ -160,7 +160,7 @@
         </div>
         <div class="col-12">
           <!--Content Hissəsi-->
-        <section class="content" id="menu1">
+          <section class="content" id="menu1">
             <div class="row">
               <section class="about-me">
                 <div class="aboutme">
@@ -168,40 +168,44 @@
                     <span class="aboutmespan"></span>
                     <h1>About me</h1>
                   </div>
-                   {% for aboutme in aboutme %}
-                   {{aboutme.content|safe}}
-                   {% endfor %}
+                  {% for aboutme in aboutme %}
+                  {{aboutme.content|safe}}
+                  {% endfor %}
                 </div>
               </section>
             </div>
-          <section class="servicesection">
-            <div class="headerservice">
-              <div class="title2">
-                <span></span>
-                <h1>My Service</h1>
-              </div>
-            </div>
-            <div class="services">
-              {% for  myservice in myservice %}
-              <div class="servicebox">
-                <div class="icon">
-                  <img src="../../static/uploads/{{myservice.serviceimage}}">
-                  <i class="{{myservice.serviceicon}}"></i>
+            <section class="servicesection">
+              <div class="headerservice">
+                <div class="title2">
+                  <span></span>
+                  <h1>My Service</h1>
                 </div>
-                <h1>{{myservice.servicetitle}}</h1>
-                <div class="servicesubtitle"><p>{{myservice.servicesubtitle}}</p></div>
               </div>
-              {% endfor %}
-              {% for  myservice2 in myservice2 %}
-              <div class="servicebox">
-                <div class="icon">
-                  <i class="{{myservice2.serviceicon}}"></i>
+              <div class="services">
+                {% for  myservice in myservice %}
+                <div class="servicebox">
+                  <div class="icon">
+                    <img src="../../static/uploads/{{myservice.serviceimage}}">
+                    <i class="{{myservice.serviceicon}}"></i>
+                  </div>
+                  <h1>{{myservice.servicetitle}}</h1>
+                  <div class="servicesubtitle">
+                    <p>{{myservice.servicesubtitle}}</p>
+                  </div>
                 </div>
-                <h1>{{myservice2.servicetitle}}</h1>
-                <div class="servicesubtitle"><p>{{myservice2.servicesubtitle}}</p></div>
-              </div>
-              {% endfor %}
-              <!--
+                {% endfor %}
+                {% for  myservice2 in myservice2 %}
+                <div class="servicebox">
+                  <div class="icon">
+                    <i class="{{myservice2.serviceicon}}"></i>
+                  </div>
+                  <h1>{{myservice2.servicetitle}}</h1>
+                  <div class="servicesubtitle">
+                    <p>{{myservice2.servicesubtitle}}</p>
+                  </div>
+                </div>
+                {% endfor %}
+                <!--
                               <div class="servicebox ">
                 <div class="icon">
                   <img src="https://img.icons8.com/ios/55/000000/parse-from-clipboard.png"/>
@@ -232,9 +236,9 @@
                 </div>
               </div>
               -->
-            </div>
-          </section>
-          <section class="skillsection">
+              </div>
+            </section>
+            <section class="skillsection">
               <div class="skills">
                 <div class="skill">
                   <div class="skilltitle">
@@ -297,14 +301,14 @@
                   </div>
                 </div>
               </div>
+            </section>
           </section>
-        </section>
-        <section class="resume" id="menu2" style="display: none;">
-          <div class="resumediv">
-            <div class="resumeheader" >
-              <span></span>
-              <h1>Resume</h1>
-            </div>
+          <section class="resume" id="menu2" style="display: none;">
+            <div class="resumediv">
+              <div class="resumeheader">
+                <span></span>
+                <h1>Resume</h1>
+              </div>
               <div class="history">
                 <div class="resume1">
                   <ul>
@@ -334,7 +338,7 @@
                       <h2>{{workhistory.title}}</h2>
                       <span>{{workhistory.startdate}} - {{workhistory.enddate}}</span>
                       <p>
-                        {{workhistory.text}}  0
+                        {{workhistory.text}} 0
                       </p>
                     </li>
                     {% endfor %}
@@ -357,24 +361,24 @@
                   </ul>
                 </div>
               </div>
-          </div>
-          <div class="testmotional-header">
-            <span></span>
-            <h1>Testimonials</h1>
-          </div>
-          <div class="testmontional">
-            <div class="wrapper">
-              <div class="carousel owl-carousel">
-                {% for slide in slides %}
-                <div class="card card-1">
-                  <h2>{{slide.name}}</h2>
-                  <h4>{{slide.job}}</h4>
-                  <p>
-                    {{slide.text}}
-                  </p>
-                </div>
-                {% endfor %}
-                <!-- <div class="card card-2">
+            </div>
+            <div class="testmotional-header">
+              <span></span>
+              <h1>Testimonials</h1>
+            </div>
+            <div class="testmontional">
+              <div class="wrapper">
+                <div class="carousel owl-carousel">
+                  {% for slide in slides %}
+                  <div class="card card-1">
+                    <h2>{{slide.name}}</h2>
+                    <h4>{{slide.job}}</h4>
+                    <p>
+                      {{slide.text}}
+                    </p>
+                  </div>
+                  {% endfor %}
+                  <!-- <div class="card card-2">
                     <h2>Jack Garrat</h2>
                     <h4>Freelancer</h4>
            
@@ -422,245 +426,248 @@
                         Great designer! he finished our work wonderfully and just in time. thanks for everything.
                     </p>
                 </div> -->
+                </div>
               </div>
-        </div>
-          </div>
-        </section>
-        <section class="portfolio" id="menu3" style="display: none;">
-          <div class="portfoliodiv">
-            <div class="portfolio-head">
-              <span></span>
-              <h1>Portfolio</h1>
             </div>
-            <div class="portfolio-menu">
-              <ul>
-                <li ><a id="all1" onclick="filter()" style="color: #d81300;" >All</a></li>
-                <li><a id="cv1" onclick="filter2()">CV</a></li>
-                <li><a id="other1" onclick="filter3()">Other</a></li>
-              </ul>
-            </div>  
-            <div class="portfolio-grid">
-              <a href="/portfolio">
-                <div class="kutu cv">
-                  <img src="static/app/img/work-01.jpg" alt="">
-                  <div class="info">
-                    <h1>Babel Admin</h1>
-                    <p>An admin template design.</p>
-                  </div>
-                </div>
-              </a>
-              <a href="portfolio.html">
-                <div class="kutu cv">
-                  <img src="static/app/img/work7 (1).jpg" alt="">
-                  <div id="cv"  class="info">
-                    <h1>Babel Admin</h1>
-                    <p>An admin template design.</p>
-                  </div>
-                </div>
-              </a>
-              <a href="portfolio.html">
-                <div class="kutu cv">
-                  <img src="static/app/img/work8.jpg" alt="">
-                  <div class="info">
-                    <h1>Babel Admin</h1>
-                    <p>An admin template design.</p>
-                  </div>
-                </div>
-              </a>
-              <a href="portfolio.html">
-                <div class="kutu cv">
-                  <img src="static/app/img/work2.jpg" alt="">
-                  <div class="info">
-                    <h1>Babel Admin</h1>
-                    <p>An admin template design.</p>
-                  </div> 
-                </div>
-              </a>
-              <a href="portfolio.html">
-                <div class="kutu cv">
-                  <img src="static/app/img/work3.jpg" alt="">
-                  <div class="info">
-                    <h1>Babel Admin</h1>
-                    <p>An admin template design.</p>
-                  </div>
-                </div>
-              </a>
-              <a href="portfolio.html">
-                <div class="kutu other">
-                  <img src="static/app/img/work4.jpg" alt="">
-                  <div class="info">
-                    <h1>Babel Admin</h1>
-                    <p>An admin template design.</p>
-                  </div>
-                </div>
-              </a>
-              <a href="portfolio.html">
-                <div class="kutu other">
-                  <img src="static/app/img/work5.jpg" alt="">
-                  <div class="info">
-                    <h1>Babel Admin</h1>
-                    <p>An admin template design.</p>
-                  </div>
-                </div>
-              </a>
-              <a href="portfolio.html">
-                <div class="kutu other">
-                  <img src="static/app/img/work6.jpg" alt="">
-                  <div class="info">
-                    <h1>Babel Admin</h1>
-                    <p>An admin template design.</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </section>
-        <section class="blog" id="menu4" style="display: none;">
-          <div class="divblog">
-            <div class="blogheader">
-              <span></span>
-              <h1>Blog Posts</h1>
-            </div>
-            <div class="blogboxes">
-              <a href="/blog">
-                <div class="blogbox">
-                  <img src="static/app/img/work-01.jpg" alt="">
-                  <span class="blogcatagory">General</span>
-                  <h1>See my current workspace</h1>
-                  <p>The first thing to remember about success is that it is a process.</p>
-                  <p class="blogdate">8 Nov 17</p>
-                </div>
-              </a>
-              <a href="/blog">
-                <div class="blogbox">
-                  <img src="static/app/img/work2.jpg" alt="">
-                  <span class="blogcatagory">General</span>
-                  <h1>See my current workspace</h1>
-                  <p>He must have tried it a hundred times, shut his eyes so that he wouldn't have to look at the floundering.</p>
-                  <p class="blogdate">8 Nov 17</p>
-                </div>
-              </a>
-              <a href="/blog"><div class="blogbox">
-                <img src="static/app/img/work3.jpg" alt="">
-                <span class="blogcatagory">General</span>
-                <h1>See my current workspace</h1>
-                <p>The first thing to remember about success is that it is a process.</p>
-                <p class="blogdate">8 Nov 17</p>
-              </div></a>
-              <a href="/blog">
-                <div class="blogbox">
-                  <img src="static/app/img/work4.jpg" alt="">
-                  <span class="blogcatagory">General</span>
-                  <h1>See my current workspace</h1>
-                  <p>The first thing to remember about success is that it is a process.</p>
-                  <p class="blogdate">8 Nov 17</p>
-                </div>
-              </a>
-              <a href="/blog">
-                <div class="blogbox">
-                  <img src="static/app/img/work5.jpg" alt="">
-                  <span class="blogcatagory">General</span>
-                  <h1>See my current workspace</h1>
-                  <p>The first thing to remember about success is that it is a process.</p>
-                  <p class="blogdate">8 Nov 17</p>
-                </div>
-              </a>
-              <a href="/blog">
-                <div class="blogbox">
-                  <img src="static/app/img/work6.jpg" alt="">
-                  <span class="blogcatagory">General</span>
-                  <h1>See my current workspace</h1>
-                  <p>The first thing to remember about success is that it is a process.</p>
-                  <p class="blogdate">8 Nov 17</p>
-                </div>
-              </a>
-              <a href="/blog">
-                <div class="blogbox">
-                  <img src="static/app/img/work-01.jpg" alt="">
-                  <span class="blogcatagory">General</span>
-                  <h1>See my current workspace</h1>
-                  <p>The first thing to remember about success is that it is a process.</p>
-                  <p class="blogdate">8 Nov 17</p>
-                </div>
-              </a>
-              <a href="/blog">
-                <div class="blogbox">
-                  <img src="static/app/img/work7 (1).jpg" alt="">
-                  <span class="blogcatagory">General</span>
-                  <h1>See my current workspace</h1>
-                  <p>The first thing to remember about success is that it is a process.</p>
-                  <p class="blogdate">8 Nov 17</p>
-                </div>
-              </a>
-              <a href="/blog">
-                <div class="blogbox">
-                  <img src="static/app/img/work3.jpg" alt="">
-                  <span class="blogcatagory">General</span>
-                  <h1>See my current workspace</h1>
-                  <p>The first thing to remember about success is that it is a process.</p>
-                  <p class="blogdate">8 Nov 17</p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </section>
-        <section class="contact" id="menu5" style="display: none;">
-          <div class="contactsdiv">
-            <div class="contact-send">
-              <div class="contact-title">
+          </section>
+          <section class="portfolio" id="menu3" style="display: none;">
+            <div class="portfoliodiv">
+              <div class="portfolio-head">
                 <span></span>
-                <h1>Contact Form</h1>
+                <h1>Portfolio</h1>
               </div>
-              <div class="form">
-                <form action="">
-                  <input type="text" placeholder="Name">
-                  <input type="email" class="input1" placeholder="Email">
-                  <textarea cols="50" rows="7" placeholder="Message"></textarea>
-                </form>
+              <div class="portfolio-menu">
+                <ul>
+                  <li><a id="all1" onclick="filter()" style="color: #d81300;">All</a></li>
+                  <li><a id="cv1" onclick="filter2()">CV</a></li>
+                  <li><a id="other1" onclick="filter3()">Other</a></li>
+                </ul>
               </div>
-              <div class="contact-btn">
-                <button type="submit">Submit</button>
+              <div class="portfolio-grid">
+                <a href="/portfolio">
+                  <div class="kutu cv">
+                    <img src="static/app/img/work-01.jpg" alt="">
+                    <div class="info">
+                      <h1>Babel Admin</h1>
+                      <p>An admin template design.</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="portfolio.html">
+                  <div class="kutu cv">
+                    <img src="static/app/img/work7 (1).jpg" alt="">
+                    <div id="cv" class="info">
+                      <h1>Babel Admin</h1>
+                      <p>An admin template design.</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="portfolio.html">
+                  <div class="kutu cv">
+                    <img src="static/app/img/work8.jpg" alt="">
+                    <div class="info">
+                      <h1>Babel Admin</h1>
+                      <p>An admin template design.</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="portfolio.html">
+                  <div class="kutu cv">
+                    <img src="static/app/img/work2.jpg" alt="">
+                    <div class="info">
+                      <h1>Babel Admin</h1>
+                      <p>An admin template design.</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="portfolio.html">
+                  <div class="kutu cv">
+                    <img src="static/app/img/work3.jpg" alt="">
+                    <div class="info">
+                      <h1>Babel Admin</h1>
+                      <p>An admin template design.</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="portfolio.html">
+                  <div class="kutu other">
+                    <img src="static/app/img/work4.jpg" alt="">
+                    <div class="info">
+                      <h1>Babel Admin</h1>
+                      <p>An admin template design.</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="portfolio.html">
+                  <div class="kutu other">
+                    <img src="static/app/img/work5.jpg" alt="">
+                    <div class="info">
+                      <h1>Babel Admin</h1>
+                      <p>An admin template design.</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="portfolio.html">
+                  <div class="kutu other">
+                    <img src="static/app/img/work6.jpg" alt="">
+                    <div class="info">
+                      <h1>Babel Admin</h1>
+                      <p>An admin template design.</p>
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
-            <div class="contact-info">
-              <div class="contact-title">
+          </section>
+          <section class="blog" id="menu4" style="display: none;">
+            <div class="divblog">
+              <div class="blogheader">
                 <span></span>
-                <h1>Contact Information</h1>
+                <h1>Blog Posts</h1>
               </div>
-              <ul>
-                <li>
-                  <span>Job:</span>
-                  <p>Lorem, ipsum.</p>
-                </li>
-                <li>
-                  <span>Education:</span>
-                  <p>Lorem, ipsum.</p>
-                </li>
-                <li>
-                  <span>Mail:</span>
-                  <p>Lorem, ipsum.</p>
-                </li>
-              </ul>
-              <div class="social-contact">
-                <a href="">
-                  <i class="fa fa-facebook face"></i>
+              <div class="blogboxes">
+                <a href="/blog">
+                  <div class="blogbox">
+                    <img src="static/app/img/work-01.jpg" alt="">
+                    <span class="blogcatagory">General</span>
+                    <h1>See my current workspace</h1>
+                    <p>The first thing to remember about success is that it is a process.</p>
+                    <p class="blogdate">8 Nov 17</p>
+                  </div>
                 </a>
-                <a href="">
-                  <i class="fab fa-instagram"></i>
+                <a href="/blog">
+                  <div class="blogbox">
+                    <img src="static/app/img/work2.jpg" alt="">
+                    <span class="blogcatagory">General</span>
+                    <h1>See my current workspace</h1>
+                    <p>He must have tried it a hundred times, shut his eyes so that he wouldn't have to look at the
+                      floundering.</p>
+                    <p class="blogdate">8 Nov 17</p>
+                  </div>
                 </a>
-                <a href="">
-                  <i class="fab fa-linkedin-in"></i>
+                <a href="/blog">
+                  <div class="blogbox">
+                    <img src="static/app/img/work3.jpg" alt="">
+                    <span class="blogcatagory">General</span>
+                    <h1>See my current workspace</h1>
+                    <p>The first thing to remember about success is that it is a process.</p>
+                    <p class="blogdate">8 Nov 17</p>
+                  </div>
+                </a>
+                <a href="/blog">
+                  <div class="blogbox">
+                    <img src="static/app/img/work4.jpg" alt="">
+                    <span class="blogcatagory">General</span>
+                    <h1>See my current workspace</h1>
+                    <p>The first thing to remember about success is that it is a process.</p>
+                    <p class="blogdate">8 Nov 17</p>
+                  </div>
+                </a>
+                <a href="/blog">
+                  <div class="blogbox">
+                    <img src="static/app/img/work5.jpg" alt="">
+                    <span class="blogcatagory">General</span>
+                    <h1>See my current workspace</h1>
+                    <p>The first thing to remember about success is that it is a process.</p>
+                    <p class="blogdate">8 Nov 17</p>
+                  </div>
+                </a>
+                <a href="/blog">
+                  <div class="blogbox">
+                    <img src="static/app/img/work6.jpg" alt="">
+                    <span class="blogcatagory">General</span>
+                    <h1>See my current workspace</h1>
+                    <p>The first thing to remember about success is that it is a process.</p>
+                    <p class="blogdate">8 Nov 17</p>
+                  </div>
+                </a>
+                <a href="/blog">
+                  <div class="blogbox">
+                    <img src="static/app/img/work-01.jpg" alt="">
+                    <span class="blogcatagory">General</span>
+                    <h1>See my current workspace</h1>
+                    <p>The first thing to remember about success is that it is a process.</p>
+                    <p class="blogdate">8 Nov 17</p>
+                  </div>
+                </a>
+                <a href="/blog">
+                  <div class="blogbox">
+                    <img src="static/app/img/work7 (1).jpg" alt="">
+                    <span class="blogcatagory">General</span>
+                    <h1>See my current workspace</h1>
+                    <p>The first thing to remember about success is that it is a process.</p>
+                    <p class="blogdate">8 Nov 17</p>
+                  </div>
+                </a>
+                <a href="/blog">
+                  <div class="blogbox">
+                    <img src="static/app/img/work3.jpg" alt="">
+                    <span class="blogcatagory">General</span>
+                    <h1>See my current workspace</h1>
+                    <p>The first thing to remember about success is that it is a process.</p>
+                    <p class="blogdate">8 Nov 17</p>
+                  </div>
                 </a>
               </div>
             </div>
-          </div>
-        </section>
-        <div class="col-12">
-          <div class="footer">
+          </section>
+          <section class="contact" id="menu5" style="display: none;">
+            <div class="contactsdiv">
+              <div class="contact-send">
+                <div class="contact-title">
+                  <span></span>
+                  <h1>Contact Form</h1>
+                </div>
+                <div class="form">
+                  <form action="">
+                    <input type="text" placeholder="Name">
+                    <input type="email" class="input1" placeholder="Email">
+                    <textarea cols="50" rows="7" placeholder="Message"></textarea>
+                  </form>
+                </div>
+                <div class="contact-btn">
+                  <button type="submit">Submit</button>
+                </div>
+              </div>
+              <div class="contact-info">
+                <div class="contact-title">
+                  <span></span>
+                  <h1>Contact Information</h1>
+                </div>
+                <ul>
+                  <li>
+                    <span>Job:</span>
+                    <p>Lorem, ipsum.</p>
+                  </li>
+                  <li>
+                    <span>Education:</span>
+                    <p>Lorem, ipsum.</p>
+                  </li>
+                  <li>
+                    <span>Mail:</span>
+                    <p>Lorem, ipsum.</p>
+                  </li>
+                </ul>
+                <div class="social-contact">
+                  <a href="">
+                    <i class="fa fa-facebook face"></i>
+                  </a>
+                  <a href="">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="col-12">
+            <div class="footer">
               <h1>Elmir Safaraliyev</h1>
               <h2>© 2021 All Copyrights reserved. Designed by <span>Elmir Safaraliyev</span></h2>
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </div>
@@ -673,20 +680,21 @@
       autoplay: true,
       autoplayTimeout: 2000,
       responsive: {
-        0:{
-          items:1,
+        0: {
+          items: 1,
           nav: false
         },
-        600:{
-          items:2,
+        600: {
+          items: 2,
           nav: false
         },
-        1000:{
-          items:3,
+        1000: {
+          items: 3,
           nav: false
         }
       }
     });
   </script>
 </body>
+
 </html>
