@@ -1,0 +1,49 @@
+{% extends 'admin/base.html' %}
+{% block pages %}
+
+<div class="container-fluid">
+    <!-- Page-Title -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-title-box">
+                <div class="float-right">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Admin</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Resume Pages</a></li>
+                        <li class="breadcrumb-item active">Edit Education History</li>
+                    </ol>
+                </div>
+                <h4 class="page-title">Edit Education History</h4>
+            </div><!--end page-title-box-->
+        </div><!--end col-->
+    </div>
+    <!-- end page title end breadcrumb -->
+    <div class="row">
+        <div class="col-lg-12">
+            <a class="btn btn-primary" href="/admin/eduhistory" role="button">Back</a>
+            <div class="card mt-4">
+                <div class="card-body">        
+                    <h4 class="mt-0 header-title">Edit Education History from here</h4>
+                    <form action="/admin/updateeduhistory/{{eduhistory.id}}" method="POST">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="edutitle"  value="{{eduhistory.title}}" id="example-text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="edustartdate" value="{{eduhistory.startdate}}" id="example-text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="eduenddate"  value="{{eduhistory.enddate}}" id="example-text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="edutext"  value="{{eduhistory.text}}" id="example-text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-gradient-primary ml-2">Update</button>
+                        </div>
+                    </form>
+                </div><!--end card-body-->
+            </div><!--end card-->
+        </div><!--end col-->
+    </div><!--end row-->
+</div><!-- container -->
+{% endblock %}

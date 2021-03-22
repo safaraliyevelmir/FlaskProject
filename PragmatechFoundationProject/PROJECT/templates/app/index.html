@@ -28,6 +28,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+
 
   <!-- Slider -->
    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -180,15 +182,23 @@
               </div>
             </div>
             <div class="services">
-              {% for  myservice in myservice%}
+              {% for  myservice in myservice %}
               <div class="servicebox">
                 <div class="icon">
-                  <img src="/uploads/{{myservice.serviceimage}}">
-                  <!-- <i class="far fa-envelope"></i> -->
-                  <!-- <i class="far fa-newspaper"></i> -->
+                  <img src="../../static/uploads/{{myservice.serviceimage}}">
+                  <i class="{{myservice.serviceicon}}"></i>
                 </div>
                 <h1>{{myservice.servicetitle}}</h1>
                 <div class="servicesubtitle"><p>{{myservice.servicesubtitle}}</p></div>
+              </div>
+              {% endfor %}
+              {% for  myservice2 in myservice2 %}
+              <div class="servicebox">
+                <div class="icon">
+                  <i class="{{myservice2.serviceicon}}"></i>
+                </div>
+                <h1>{{myservice2.servicetitle}}</h1>
+                <div class="servicesubtitle"><p>{{myservice2.servicesubtitle}}</p></div>
               </div>
               {% endfor %}
               <!--
@@ -602,9 +612,11 @@
                 <h1>Contact Form</h1>
               </div>
               <div class="form">
-                <input type="text" placeholder="Name">
-                <input type="email" class="input1" placeholder="Email">
-                <textarea cols="50" rows="7" placeholder="Message"></textarea>
+                <form action="">
+                  <input type="text" placeholder="Name">
+                  <input type="email" class="input1" placeholder="Email">
+                  <textarea cols="50" rows="7" placeholder="Message"></textarea>
+                </form>
               </div>
               <div class="contact-btn">
                 <button type="submit">Submit</button>

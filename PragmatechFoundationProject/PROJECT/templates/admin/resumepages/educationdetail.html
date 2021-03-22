@@ -1,0 +1,63 @@
+{% extends "admin/base.html" %}
+{% block header %}
+<link href="../../../static/admin/plugins/nestable/jquery.nestable.min.css" rel="stylesheet" />
+{% endblock %}
+{% block pages %}
+
+
+<div class="container-fluid">
+    <!-- Page-Title -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-title-box">
+                <div class="float-right">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Resume</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Education History</a></li>
+                        <li class="breadcrumb-item active">Education History Detail</li>
+                    </ol>
+                </div>
+                <h4 class="page-title">Education History Detail</h4>
+            </div><!--end page-title-box-->
+        </div><!--end col-->
+    </div>
+    <!-- end page title end breadcrumb -->
+    <div class="row">
+        <div class="col-12">
+            <a class="btn btn-primary" href="/admin/eduhistory" role="button">Back</a>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h4 class="mt-0 header-title">Education History Detail</h4>
+                    <div class="custom-dd dd" id="nestable_list_1">
+                        <ol class="dd-list">
+                            <li class="dd-item" data-id="1">
+                                <div class="dd-handle">
+                                <b>Title: </b>{{eduhistory.title}}
+                                </div>
+                            </li>
+                            <li class="dd-item" data-id="1">
+                                <div class="dd-handle">
+                                <b>Startdate: </b>{{eduhistory.startdate}}
+                                </div>
+                            </li>
+                            <li class="dd-item" data-id="1">
+                                <div class="dd-handle">
+                                <b>End Date: </b>{{eduhistory.enddate}}
+                                </div>
+                            </li>
+                            <li class="dd-item" data-id="1">
+                                <div class="dd-handle">
+                                <b>Text: </b>{{eduhistory.text}}
+                                </div>
+                            </li>
+                        </ol>
+                    </div><!--nastable-list-1-->    
+                </div><!--end card-body-->
+            </div><!--end card-->
+        </div> <!-- end col -->
+    </div> <!-- end row -->  
+
+</div><!-- container -->
+<script src="../../../static/admin/plugins/nestable/jquery.nestable.min.js"></script>
+<script src="../../../static/admin/pages/jquery.nastable.init.js"></script>
+{% endblock %}

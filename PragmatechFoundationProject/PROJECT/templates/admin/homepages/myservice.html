@@ -1,0 +1,122 @@
+{% extends "admin/base.html" %}
+
+{% block pages %}
+<div class="container-fluid">
+    <!-- Page-Title -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-title-box">
+                <div class="float-right">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Admin</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Home Page</a></li>
+                        <li class="breadcrumb-item active">My Service</li>
+                    </ol>
+                </div>
+                <h4 class="page-title">My Services</h4>
+            </div><!--end page-title-box-->
+        </div><!--end col-->
+    </div>
+    <!-- end page title end breadcrumb -->
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mt-0 header-title">Add My Service with Images</h4>
+                    <form class="mt-4" action="/admin/uploadservice" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="exampleInputEmail1"
+                            name="servicetitle"
+                            aria-describedby="emailHelp" placeholder="Title" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="exampleInputEmail1"
+                            name="servicesubtitle"
+                            aria-describedby="emailHelp" placeholder="Sub title" required>
+                        </div>
+                        <div class="custom-file mb-3">
+                            <input type="file" class="custom-file-input"
+                            name="serviceimage" 
+                            id="customFile" required>
+                            <label class="custom-file-label" for="customFile">Choose image</label>
+                        </div>
+                        <button type="submit" class="btn btn-gradient-primary">Submit</button>
+                    </form>                                           
+                </div><!--end card-body-->
+            </div><!--end card-->
+        </div><!--end col-->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mt-0 header-title">Add My Serivices with icon</h4>
+                    <form class="mt-4" action="/admin/addservice" method="POST" >
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="exampleInputText" 
+                            aria-describedby="emailHelp" name="servicetitle" placeholder="Title" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="exampleInputText"
+                             aria-describedby="emailHelp" name="servicesubtitle" placeholder="Subtitle" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="exampleInputText" 
+                            aria-describedby="emailHelp" name="serviceicon" placeholder="İcon Class Name" required>
+                        </div>
+                        <p class="text-muted mb-3">
+                            You can select icon in <a href="">Uİ kit icons</a>
+                        </p>
+                        <button type="submit" class="btn btn-gradient-primary">Submit</button>
+                    </form>                                           
+                </div><!--end card-body-->
+            </div><!--end card-->
+        </div><!--end col-->
+    </div><!--end row-->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mt-0 header-title">Services Table</h4>
+                    </p>
+                    <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Subtitle</th>
+                            <th>Icon class name</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for myservice in myservice %}
+                            <tr>
+                                <td>{{myservice.id}}</td>
+                                <td>{{myservice.servicetitle}}</td>
+                                <td>{{myservice.servicesubtitle}}</td>
+                                <td>Null</td>
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-soft-danger btn-circle" id="bElim"  href="/admin/deleteservice/{{myservice.id}}"><i class="dripicons-trash" aria-hidden="true"></i></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            {% for myservice2 in myservice2 %}
+                            <tr>
+                                <td>{{myservice2.id}}</td>
+                                <td>{{myservice2.servicetitle}}</td>
+                                <td>{{myservice2.servicesubtitle}}</td>
+                                <td>{{myservice2.serviceicon}}</td>
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-soft-danger btn-circle" id="bElim"  href="/admin/deleteservice2/{{myservice2.id}}"><i class="dripicons-trash" aria-hidden="true"></i></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+
+{% endblock %}
