@@ -56,8 +56,8 @@
                             <label class="col-sm-12 col-form-label text-left" style="font-size: 17px;">Catagory</label>
                             <div class="col-12">
                                 <select name="catagory" class="form-control">
-                                    {% for cat in catagory %}
-                                    <option value="{{catagory}}">{{cat.name}}</option>
+                                    {% for catagory in catagory %}
+                                    <option value="{{catagory}}">{{catagory.name}}</option>
                                     {% endfor %}
                                 </select>
                             </div>

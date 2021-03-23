@@ -28,6 +28,7 @@ def addabout():
 
 @app.route('/admin/aboutmeedit/<id>', methods=['GET','POST'])
 def editabout(id):
+    aboutme=Aboutme.query.all()
     updateaboutme=Aboutme.query.get(id)
     if request.method=='POST':
         updateaboutme.content=request.form['content']

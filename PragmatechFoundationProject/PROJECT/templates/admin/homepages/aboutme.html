@@ -68,7 +68,7 @@
                     <h4 class="mt-0 header-title">Edit Aboutme from here</h4>
                     <form action="/admin/aboutmeedit/1" method="POST">
                         {% for aboutme in aboutme %}
-                        <textarea name="content" id="aboutmedit" required>{{aboutme.content}}</textarea>
+                        <textarea id="elm1" name="content">{{aboutme.content|safe}}</textarea>
                         {% endfor %}
                         <div class="form-group mt-3 float-end">
                             <input type="submit" class="btn btn-success" name="button" value="Update">
@@ -80,17 +80,11 @@
     </div><!--end row-->
 </div><!-- container -->
 
+<script src="../../../static/admin/js/jquery.min.js"></script>
+<!--Wysiwig js-->
+<script src="../../../static/admin/plugins/tinymce/tinymce.min.js"></script>
+<script src="../../../static/admin/pages/jquery.form-editor.init.js"></script>
 <script>
-    $(document).ready(function() {
-    $('#aboutmedit').summernote();
-  });
-  $('#aboutmedit').summernote({
-  height: 300,                 // set editor height
-  minHeight: null,             // set minimum height of editor
-  maxHeight: null,             // set maximum height of editor
-  focus: true                  // set focus to editable area after initializing summernote
-});
-
 function editaboutme(){
     document.getElementById('editaboutme').style.display='block'
 }
