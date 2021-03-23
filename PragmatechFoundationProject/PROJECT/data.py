@@ -86,5 +86,9 @@ class Comments(db.Model):
     comment=db.Column(db.String(100))
     blog_id=db.Column(db.Integer, db.ForeignKey(BlogPost.id))
 
-
+class Profileinfo(db.Model):
+    __tablename__='Profileinfo'
+    id=db.Column(db.Integer,primary_key=True)
+    infoname=db.Column(db.String(30))
+    info=db.Column(db.String(30))
 

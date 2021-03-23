@@ -2,25 +2,28 @@ from PROJECT import app
 from flask import Flask, flash, request, redirect, url_for,render_template
 from .data import *
 from werkzeug.utils import secure_filename
+from datetime import datetime
 import os
 
 # Add Blog Post
-@app.route('/admin/addblog')
+@app.route('/admin/addblog', methods=['GET','POST'])
 def addblog():
     catagory=Catagory.query.all()
     if request.method=='POST':
-        file=request.files['img']
+        file=request.files['image']
         filename=secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
-        myservice=MyService(
+        blogpost=BlogPost(
             img=filename,
             title=request.form['title'],
             url=request.form['url'],
             subtitle=request.form['subtitle'],
-            date=request.form['date'],
-            content=request.form['content']
+            date=datetime.now(),
+            content=request.form['content'],
+            catagory=request.form['catagory']
+            # tag=request.form['tag']
         )
-        db.session.add(myservice)
+        db.session.add(blogpost)
         db.session.commit()
         return redirect('/admin/blog')
     return render_template('admin/blogpages/addblog.html', catagory=catagory)
