@@ -43,17 +43,17 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="mt-0 header-title">Add Blog Post</h4>
-                    <form action="/admin/addblog" method="POST" enctype="multipart/form-data">
+                    <form action="/admin/editblog/{{blogpost.id}}" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
-                            <input class="form-control" type="text" name="title" placeholder="Title" id="example-text-input"
+                            <input class="form-control" type="text" name="title" value="{{blogpost.title}}"  id="example-text-input"
                                 required>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" name="subtitle" placeholder="Subtitle"
+                            <input class="form-control" type="text" name="subtitle" value="{{blogpost.subtitle}}"  
                                 id="example-text-input" required>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" name="url" placeholder="url" id="example-text-input"
+                            <input class="form-control" type="text" name="url" id="example-text-input" value="{{blogpost.url}}"
                                 required>
                         </div>
                         <div class="custom-file mb-3">
@@ -71,10 +71,10 @@
                             </div>
                         </div>
                         <div class="form-group mt-4">
-                            <textarea name="content" id="aboutmedit"></textarea>
+                            <textarea name="content" id="aboutmedit">{{blogpost.content|safe}}"</textarea>
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" name="tag" placeholder="Tag" id="example-text-input"
+                            <input class="form-control" type="text" name="tag" value="{{blogpost.tag}}" id="example-text-input"
                                 required>
                         </div>
                         <div class="form-group">

@@ -51,10 +51,6 @@ class Catagory(db.Model):
 
     post_catagory=db.relationship('BlogPost', backref='catagory', lazy=True)
 
-tags_blogs = db.Table('tags_blogs',
-    db.Column('tag_id', db.Integer, db.ForeignKey('Tags.id'), primary_key=True),
-    db.Column('blog_id', db.Integer, db.ForeignKey('BlogPost.id'), primary_key=True))
-
 class BlogPost(db.Model):
     __tablename__="BlogPost"
     id=db.Column(db.Integer,primary_key=True)
@@ -62,21 +58,13 @@ class BlogPost(db.Model):
     title=db.Column(db.String(50))
     subtitle=db.Column(db.String(50))
     img=db.Column(db.String(120))
-    date=db.Column(db.DateTime(50))
+    date=db.Column(db.Date)
+    tag=db.Column(db.String(120))
     content=db.Column(db.Text)
     
 
-    catagory_post=db.Column(db.Integer, db.ForeignKey(Catagory.id))
-    tags = db.relationship('Tags', secondary=tags_blogs, lazy='subquery',
-        backref=db.backref('BlogPost', lazy=True))
-
-    
+    catagory_post=db.Column(db.Integer, db.ForeignKey('Catagory.id'))
     post_comment=db.relationship('Comments', backref='BlogPost', lazy=True)
-
-class Tags(db.Model):
-    __tablename__="Tags"
-    id=db.Column(db.Integer,primary_key=True)
-    name=db.Column(db.String(50))
 
 class Comments(db.Model):
     __tablename__="Comments"
@@ -84,11 +72,44 @@ class Comments(db.Model):
     name=db.Column(db.String(50))
     email=db.Column(db.String(50))
     comment=db.Column(db.String(100))
-    blog_id=db.Column(db.Integer, db.ForeignKey(BlogPost.id))
+    date=db.Column(db.Date)
+    blog_id=db.Column(db.Integer, db.ForeignKey('BlogPost.id'))
 
-class Profileinfo(db.Model):
-    __tablename__='Profileinfo'
+class Contact(db.Model):
+    __tablename__='Contact'
     id=db.Column(db.Integer,primary_key=True)
-    infoname=db.Column(db.String(30))
-    info=db.Column(db.String(30))
+    header=db.Column(db.String(20))
+    info=db.Column(db.String(50))
+
+class Profile(db.Model):
+    __tablename__='Profile'
+    id=db.Column(db.Integer,primary_key=True)
+    infoheader=db.Column(db.String(120))
+    informatio=db.Column(db.String(120))
+
+class Profileim(db.Model):
+    __tablename__='Profileimg'
+    id=db.Column(db.Integer,primary_key=True)
+    img=db.Column(db.String(120))
+
+class SkillsCat(db.Model):
+    __tablename__='SkillCatagory'
+    id=db.Column(db.Integer,primary_key=True)
+    name=db.Column(db.String(120))
+
+    skill_catagory=db.relationship('Skills', backref='skillscat',lazy=True)
+
+class Skills(db.Model):
+    __tablename__='Skills'
+    id=db.Column(db.Integer, primary_key=True)
+    name=db.Column(db.String(120))
+    percatage=db.Column(db.String(120))
+
+    skill_catagory=db.Column(db.Integer, db.ForeignKey('SkillCatagory.id'))
+
+
+
+
+
+
 

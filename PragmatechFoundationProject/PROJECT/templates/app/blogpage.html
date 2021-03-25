@@ -1,0 +1,87 @@
+{% extends "app/base.html" %}
+{% block pages %}
+<section class="blog" id="menu4" >
+    <div class="divblog">
+      <div class="blogheader">
+        <span></span>
+        <h1>Blog Posts</h1>
+      </div>
+      <div class="blogboxes">
+        {% for blogpost in blogpost %}
+        <a href="/blogpost/{{blogpost.url}}">
+          <div class="blogbox">
+            <img src="static/uploads/{{blogpost.img}}" alt="">
+            <span class="blogcatagory">{{blogpost.catagory.name}}</span>
+            <h1>{{blogpost.title}}</h1>
+            <p>{{blogpost.subtitle}}</p>
+            <span class="blogdate">{{blogpost.date}}</span>
+          </div>
+        </a>
+        {% endfor %}
+        <!-- <a href="/blog">
+          <div class="blogbox">
+            <img src="static/app/img/work3.jpg" alt="">
+            <span class="blogcatagory">General</span>
+            <h1>See my current workspace</h1>
+            <p>The first thing to remember about success is that it is a process.</p>
+            <p class="blogdate">8 Nov 17</p>
+          </div>
+        </a>
+        <a href="/blog">
+          <div class="blogbox">
+            <img src="static/app/img/work4.jpg" alt="">
+            <span class="blogcatagory">General</span>
+            <h1>See my current workspace</h1>
+            <p>The first thing to remember about success is that it is a process.</p>
+            <p class="blogdate">8 Nov 17</p>
+          </div>
+        </a>
+        <a href="/blog">
+          <div class="blogbox">
+            <img src="static/app/img/work5.jpg" alt="">
+            <span class="blogcatagory">General</span>
+            <h1>See my current workspace</h1>
+            <p>The first thing to remember about success is that it is a process.</p>
+            <p class="blogdate">8 Nov 17</p>
+          </div>
+        </a>
+        <a href="/blog">
+          <div class="blogbox">
+            <img src="static/app/img/work6.jpg" alt="">
+            <span class="blogcatagory">General</span>
+            <h1>See my current workspace</h1>
+            <p>The first thing to remember about success is that it is a process.</p>
+            <p class="blogdate">8 Nov 17</p>
+          </div>
+        </a>
+        <a href="/blog">
+          <div class="blogbox">
+            <img src="static/app/img/work-01.jpg" alt="">
+            <span class="blogcatagory">General</span>
+            <h1>See my current workspace</h1>
+            <p>The first thing to remember about success is that it is a process.</p>
+            <p class="blogdate">8 Nov 17</p>
+          </div>
+        </a>
+        <a href="/blog">
+          <div class="blogbox">
+            <img src="static/app/img/work7 (1).jpg" alt="">
+            <span class="blogcatagory">General</span>
+            <h1>See my current workspace</h1>
+            <p>The first thing to remember about success is that it is a process.</p>
+            <p class="blogdate">8 Nov 17</p>
+          </div>
+        </a>
+        <a href="/blog">
+          <div class="blogbox">
+            <img src="static/app/img/work3.jpg" alt="">
+            <span class="blogcatagory">General</span>
+            <h1>See my current workspace</h1>
+            <p>The first thing to remember about success is that it is a process.</p>
+            <p class="blogdate">8 Nov 17</p>
+          </div>
+        </a> -->
+      </div>
+    </div>
+  </section>
+{% endblock %}

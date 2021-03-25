@@ -95,24 +95,45 @@ def deleteservice2(id):
     return redirect('/admin/homepages/myservice')
 
 
-# Skills
-@app.route('/admin/skills')
+# Skills  Page
+
+@app.route('/admin/skill')
 def skills():
-    Skills.query.all()
-    return render_template('/admin/homepages/skills.html', skills=skills)
+    skillcatagory=SkillsCat.query.all()
+    skills=Skills.query.all()
+    return render_template('/admin/homepages/skill.html',skillcatagory=skillcatagory, skills=skills)
 
 # Add Skill
-
 @app.route('/admin/addskill', methods=['GET','POST'])
 def addskill():
-    if request.method=='POST':
-        skills=Skills(
-            skillsheader=request.form['skillsheader'],
-            skillname=request.form['skillname'],
-            skillpercantege=request.form['skillpercantege']
-        )
-        db.session.add(skills)
-        db.session.commit()
-        return redirect('/admin/skills')
-    return render_template('/admin/skills.html')
+    skillcatagory=SkillsCat.query.all()
+    skills=Skills(
+        name=request.form['name'],
+        percatage=request.form['percantage'],
 
+        skill_catagory=int(request.form['skillcatagory'])
+    )
+    db.session.add(skills)
+    db.session.commit()
+    return redirect('/admin/skill')
+    return render_template('/admin/homepages/skill.html', skillcatagory=skillcatagory)
+
+# Skill Catagory
+
+@app.route('/admin/skill/catagory')
+def skillcatagory():
+    skillcatagory=SkillsCat.query.all()
+    return render_template('/admin/homepages/skillcatagory.html', skillcatagory=skillcatagory)
+
+# Add Catagory
+
+@app.route('/admin/skill/addcatagory', methods=['GET','POST'])
+def addskillcatagory():
+    if request.method=='POST':
+        skillcatagory=SkillsCat(
+            name=request.form['name']
+        )
+        db.session.add(skillcatagory)
+        db.session.commit()
+        return redirect('/admin/skill/catagory')
+    return render_template('/admin/homepages/skillcatagory.html')

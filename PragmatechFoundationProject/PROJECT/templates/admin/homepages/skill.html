@@ -1,0 +1,109 @@
+{% extends 'admin/base.html' %}
+{% block pages %}
+
+<div class="container-fluid">
+    <!-- Page-Title -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-title-box">
+                <div class="float-right">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Admin</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Home Pages</a></li>
+                        <li class="breadcrumb-item active">Skill</li>
+                    </ol>
+                </div>
+                <h4 class="page-title">Skill</h4>
+            </div>
+            <!--end page-title-box-->
+        </div>
+        <!--end col-->
+    </div>
+    <!-- end page title end breadcrumb -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mt-0 header-title">Add Skills from here</h4>
+                    <form action="/admin/addskill" method="POST">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="name" placeholder="Name"
+                                id="example-text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="percantage" placeholder="Percentage"
+                                id="example-text-input" required>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label text-left" style="font-size: 17px;">Catagory</label>
+                            <div class="col-12">
+                                <select name="skillcatagory" class="form-control">
+                                    {% for skillcatagory in skillcatagory %}
+                                    <option value="{{skillcatagory.id}}">{{skillcatagory.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-gradient-primary ml-2">Send</button>
+                        </div>
+                    </form>
+                </div>
+                <!--end card-body-->
+            </div>
+            <!--end card-->
+        </div>
+        <!--end col-->
+    </div>
+    <!--end row-->
+    {% for skillcatagory in skillcatagory %}
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mt-0 header-title">{{skillcatagory.name}} Skills Table</h4>
+                    <table id="datatable" class="table table-bordered dt-responsive nowrap"
+                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Percantege</th>
+                                <th>Catagory</th>
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for skills in skills %}
+                            <tr>
+                                <td>{{skills.id}}</td>
+                                <td>{{skills.name}}</td>
+                                <td>{{skills.percatage}}</td>
+                                <td>{{skills.skill_catagory}}</td>
+                                <td class="text-center">
+                                    <a id="bEdit" type="button" class="btn btn-sm btn-soft-success btn-circle mr-2"
+                                        href=""><i
+                                            class="dripicons-pencil"></i></a>
+                                    <a class="btn btn-sm btn-soft-danger btn-circle" id="bElim"
+                                        href="" aria-hidden="true"><i
+                                            class="dripicons-trash"></i></a>
+                                    <a class="btn btn-sm btn-soft-warning btn-circle" id="bElim"
+                                        href="" aria-hidden="true"><i
+                                            class="dripicons-folder-open"></i></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+    {% endfor %}
+
+
+
+</div><!-- container -->
+
+{% endblock %}

@@ -1,8 +1,6 @@
-body{
-    font-family: 'Roboto', sans-serif;
-}
-.contact{
+.contactmain{
     margin-top: 37px;
+    padding-left: 30px;
     width: 107%;
     height: 979px;
     border-radius: 8px;
@@ -10,28 +8,11 @@ body{
     background-color: white;
     padding-top: 48px;
 }
-.contactsdiv{
-    padding-left: 35px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-        ".contact-send .contact-info";
-}
-.contact-title{
+.contactformheader{
     position: relative;
     display: inline-block;
 }
-.contact-title span{
-    background-color: #ea2c19;
-    position: absolute;
-    height: 7px;
-    width: 100%;
-    bottom: 0;
-    opacity: 0.4;
-}
-.contact-title h1{
+.contactformheader h1{
     font-size: 18px;
     font-weight: 600;
     position: relative;
@@ -39,82 +20,98 @@ body{
     color: #333333;
     letter-spacing: 1px;
 }
-.form{
-    padding-top: 35px;
+.contactformheader span{
+    background-color: #ea2c19;
+    position: absolute;
+    height: 7px;
+    width: 100%;
+    bottom: 0;
+    opacity: 0.4;
 }
-.contact-btn{
-    margin-top: 30px;
+.form-1, .form-2{
+    display: inline;
 }
-.contact-btn button{
-    background-color: #d81300;
-    border-radius: 15px;
-    width: 120px;
+form{
+    padding-top: 30px;
+}
+.form-1 input{
+    width: 185px;
+    height: 31px;
+    display: inline;
+    margin-right: 20px;
+    border-bottom: 1px solid #dfdfdf;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    outline: none;
+}
+.form-2 input{
+    width: 185px;
+    height: 31px;
+    display: inline;
+    border-bottom: 1px solid #dfdfdf;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    outline: none;
+}
+.form-3{
+    padding-top: 30px;
+}
+.form-3 textarea{
+    border-bottom: 1px solid #dfdfdf;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+}
+.form-4{
+    padding-top: 30px;
+    padding-left: 20px;
+}
+.form-4 button{
+    width: 100px;
     height: 30px;
+    border-radius: 20px;
+    background-color: #d81300;
     border: none;
     outline: none;
     color: white;
 }
-.contact-btn button:hover{
-    cursor: pointer;
+.form-4 button:hover{
     background-color: #ea2c19;
 }
-.form input{
-    border-bottom: 0.5px solid #dfdfdf;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    outline: none;
-    width: 175px;
-    height: 35px;
-    font-family: 'Roboto', sans-serif;
+.contactform{
+    margin-bottom: 50px;
+    flex: 1;
 }
-.input1{
-    margin-left: 10px;
+.contactinfo{
+    flex: 1;
 }
-.form textarea {
-    outline: none;
-    border-bottom: 0.5px solid #dfdfdf;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    padding-top: 20px;
-    font-family: 'Roboto', sans-serif;
+.contactinfo{
+    margin-left: 20px;
 }
-
-.contact-info ul{
+.contact{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.contact ul{
     margin-top: 20px;
-
 }
-.contact-info ul li span{
-    font-weight: 400;
-    line-height: 34px;
-    font-size: 15px;
-    color: #000000;
-}
-.contact-info ul li p{
+.contact ul li p{
     display: inline;
-    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
     line-height: 34px;
     color: #787878;
-    font-size: 15px;
-    
+    font-weight: 400;
 }
-.social-contact{
-    margin-top: 30px;
-}
-.social-contact a  i:hover{
-    transform: scale(1.5, 1.5);
-   
-}
-.social-contact a .fa-instagram:hover{
-    color: purple;
-}
-.social-contact a .fa-linkedin-in:hover{
-    color: blue;
-}
-.social-contact i{
-    padding: 5px;
-}
-.social-contact a{
-   color: black;
+.contact ul li span{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 34px;
+    color: #000000;
+    font-weight: 400;
 }

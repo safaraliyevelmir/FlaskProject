@@ -14,6 +14,12 @@
     .content{
         width: 105%;
     }
+    .blog{
+        width: 105%;
+    }
+    .contactmain{
+        width: 105%;
+    }
     .degreebar{
         width: 275px;
     }
@@ -68,7 +74,12 @@
     .content{
         width: 142%;
     }
-
+    .blog{
+        width: 142% !important;
+    }
+    .contactmain{
+        width: 142%;
+    }
     .profile-name{
         line-height: 40px;
         padding-top: 16px;
@@ -101,6 +112,9 @@
     }
     .service4{
         margin-top: 30px;
+    }
+    .contact{
+        flex-direction: column;
     }
     .skill1{
         margin-left: 70px;
@@ -168,6 +182,12 @@
         width: 100%;
     }
     .content{
+        width: 150%;
+    }
+    .blog{
+        width: 150%;
+    }
+    .contactmain{
         width: 150%;
     }
     .responsivmenu-ul{

@@ -1,6 +1,8 @@
-{% extends "admin/base.html" %}
+{% extends 'admin/base.html' %}
 {% block pages %}
+
 <div class="container-fluid">
+    <!-- Page-Title -->
     <div class="row">
         <div class="col-sm-12">
             <div class="page-title-box">
@@ -8,45 +10,64 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0);">Admin</a></li>
                         <li class="breadcrumb-item"><a href="javascript:void(0);">Blog Pages</a></li>
-                        <li class="breadcrumb-item active">Blog Posts</li>
+                        <li class="breadcrumb-item active">Add Blog Catagory</li>
                     </ol>
                 </div>
-                <h4 class="page-title">Blog Posts</h4>
+                <h4 class="page-title">Blog Catagory</h4>
             </div>
             <!--end page-title-box-->
         </div>
         <!--end col-->
     </div>
+    <!-- end page title end breadcrumb -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mt-0 header-title">Add Blog Catagory</h4>
+                    <form action="/admin/skill/addcatagory" method="POST">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="name" placeholder="Catagory"
+                                id="example-text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-gradient-primary ml-2">Add</button>
+                        </div>
+                    </form>
+                </div>
+                <!--end card-body-->
+            </div>
+            <!--end card-->
+        </div>
+        <!--end col-->
+    </div>
+    <!--end row-->
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="mt-0 header-title">Blog Table</h4>
+                    <h4 class="mt-0 header-title">Blog Catagory Table</h4>
                     <table id="datatable" class="table table-bordered dt-responsive nowrap"
                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Title</th>
                                 <th>Catagory</th>
                                 <th class="text-center">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% for blogpost in blogpost %}
+                            {% for skillcatagory in skillcatagory %}
                             <tr>
-                                <td>{{blogpost.id}}</td>
-                                <td>{{blogpost.title}}</td>
-                                <td>{{blogpost.catagory.name}}</td>
+                                <td>{{skillcatagory.id}}</td>
+                                <td>{{skillcatagory.name}}</td>
                                 <td class="text-center">
                                     <a id="bEdit" type="button" class="btn btn-sm btn-soft-success btn-circle mr-2"
-                                        href="/admin/editblog/{{blogpost.id}}"><i class="dripicons-pencil"></i></a>
+                                        href="" onclick="edit()"><i
+                                            class="dripicons-pencil"></i></a>
                                     <a class="btn btn-sm btn-soft-danger btn-circle" id="bElim"
-                                        href="/admin/deleteblogpost/{{blogpost.id}}" aria-hidden="true"><i
+                                        href="" aria-hidden="true"><i
                                             class="dripicons-trash"></i></a>
-                                    <a class="btn btn-sm btn-soft-warning btn-circle" id="bElim"
-                                        href="/blogpost/{{blogpost.url}}" aria-hidden="true"><i
-                                            class="dripicons-folder-open"></i></a>
                                 </td>
                             </tr>
                             {% endfor %}
@@ -57,5 +78,5 @@
             </div>
         </div> <!-- end col -->
     </div> <!-- end row -->
-</div>
+</div><!-- container -->
 {% endblock %}

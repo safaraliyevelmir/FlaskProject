@@ -3,7 +3,7 @@ body{
 }
 .singleblog{
     margin-top: 37px;
-    width: 107%;
+    width: 110%;
     height: 110%;
     border-radius: 8px;
     margin-left: -15px;
@@ -94,4 +94,138 @@ body{
 }
 .catagory ul li{
     border-bottom: solid 1px #efefef;
+}
+.commentheader h1{
+    font-size: 1.125rem;
+    font-weight: 500;
+    position: relative;
+}
+.commentheader span{
+    background-color: #ea2c19;
+    position: absolute;
+    height: 7px;
+    width: 100%;
+    bottom: 0;
+    opacity: 0.4;
+}
+.commentheader{
+    position: relative;
+    display: inline-block;
+}
+.comment{
+    padding-left: 30px;
+    padding-bottom: 30px;
+}
+.commentdiv{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+.commentdiv .img{
+    width: 75px;
+    height: 75px;
+}
+.commentdiv .img img{
+    width: 100%;
+    height: 100%;
+}
+.commentcontent{
+    padding-left: 20px;
+    padding-top: 7px;
+    width: 55%;
+}
+.commentcontent h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #333333;
+    font-weight: 500;
+}
+.commentcontent span{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.688rem;
+    line-height: 1rem;
+    color: #b0b0b0;
+    font-weight: 400;
+}
+.commentcontent p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.813rem;
+    line-height: 1.25rem;
+    color: #989898;
+    font-weight: 400;
+}
+.addcomment{
+    padding-top: 70px;
+}
+.addcommentheader{
+    position: relative;
+    display: inline-block;
+}
+.addcommentheader h1{
+    font-size: 1.125rem;
+    font-weight: 500;
+    position: relative;
+}
+.addcommentheader span{
+   background-color: #ea2c19;
+    position: absolute;
+    height: 7px;
+    width: 100%;
+    bottom: 0;
+    opacity: 0.4;
+}
+.form-1, .form-2{
+    display: inline;
+}
+form{
+    padding-top: 30px;
+}
+.form-1 input{
+    width: 220px;
+    height: 31px;
+    display: inline;
+    margin-right: 20px;
+    border-bottom: 1px solid #dfdfdf;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    outline: none;
+}
+.form-2 input{
+    width: 220px;
+    height: 31px;
+    display: inline;
+    border-bottom: 1px solid #dfdfdf;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    outline: none;
+}
+.form-3{
+    padding-top: 30px;
+}
+.form-3 textarea{
+    border-bottom: 1px solid #dfdfdf;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+}
+.form-4{
+    padding-top: 30px;
+    padding-left: 20px;
+}
+.form-4 button{
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: #d81300;
+    border: none;
+    outline: none;
+    color: white;
+}
+.form-4 button:hover{
+    background-color: #ea2c19;
 }

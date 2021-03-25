@@ -1,0 +1,95 @@
+{% extends 'admin/base.html' %}
+{% block pages %}
+<div class="container-fluid">
+    <!-- Page-Title -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-title-box">
+                <div class="float-right">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Admin</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Profile</a></li>
+                        <li class="breadcrumb-item active">Profile Informatio</li>
+                    </ol>
+                </div>
+                <h4 class="page-title">Profile Informations</h4>
+            </div><!--end page-title-box-->
+        </div><!--end col-->
+    </div>
+    <!-- end page title end breadcrumb -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">        
+                    <h4 class="mt-0 header-title">Add Profile Informations</h4>
+                    <form action="/admin/profile/addinfo" method="POST">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="infoheader" placeholder="Profile Header" id="example-text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="information" placeholder="Indormation" id="example-text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-gradient-primary ml-2">Send</button>
+                        </div>
+                    </form>
+                </div><!--end card-body-->
+            </div><!--end card-->
+        </div><!--end col-->
+    </div><!--end row-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">        
+                    <h4 class="mt-0 header-title">Add Profile Image or Edit</h4>
+                    <form action="/admin/profile/editimage" method="POST" enctype="multipart/form-data">
+                        <div class="custom-file mb-3">
+                            <input type="file" class="custom-file-input" name="image" id="customFile" required>
+                            <label class="custom-file-label" for="customFile">Choose image</label>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-gradient-primary ml-2">Sonra buna buna</button>
+                            <a href="/admin/profile/image/1" class="btn btn-primary" role="button" data-bs-toggle="button">İlk Buna</a>
+                        </div>
+                    </form>
+                </div><!--end card-body  -->
+            </div><!--end card-->
+        </div><!--end col-->
+    </div><!--end row-->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mt-0 header-title">Profile Informatio Table</h4>
+                    </p>
+                    <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Header</th>
+                            <th>Info</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for profile in profile %}
+                            <tr>
+                                <td>{{profile.id}}</td>
+                                <td>{{profile.infoheader}}</td>
+                                <td>{{profile.informatio}}</td>
+                                <td class="text-center">
+                                    
+                                    <a id="bEdit" type="button" class="btn btn-sm btn-soft-success btn-circle mr-2" href="/admin/profile/edit/{{profile.id}}"><i class="dripicons-pencil"></i></a>
+                                    <a class="btn btn-sm btn-soft-danger btn-circle" id="bElim"  href="/admin/profile/delete/{{profile.id}}"><i class="dripicons-trash" aria-hidden="true"></i></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+</div><!-- container -->
+{% endblock %}

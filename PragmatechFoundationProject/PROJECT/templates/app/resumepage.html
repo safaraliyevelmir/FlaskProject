@@ -1,0 +1,130 @@
+{% extends "app/base.html" %}
+{% block pages %}
+<section class="resume" id="menu2">
+    <div class="resumediv">
+      <div class="resumeheader">
+        <span></span>
+        <h1>Resume</h1>
+      </div>
+      <div class="history">
+        <div class="resume1">
+          <ul>
+            <li class="li-resume-header">
+              <i class="fa fa-suitcase"></i>
+              <p>Education History</p>
+            </li>
+            {% for eduhistory in eduhistorys %}
+            <li class="li-resume">
+              <h2>{{eduhistory.title}}</h2>
+              <span>{{eduhistory.startdate}} - {{eduhistory.enddate}}</span>
+              <p>
+                {{eduhistory.text}}
+              </p>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="resume2 resume1">
+          <ul>
+            <li class="li-resume-header">
+              <i class="fa fa-graduation-cap"></i>
+              <p>Working History</p>
+            </li>
+            {% for workhistory in workhistorys %}
+            <li class="li-resume">
+              <h2>{{workhistory.title}}</h2>
+              <span>{{workhistory.startdate}} - {{workhistory.enddate}}</span>
+              <p>
+                {{workhistory.text}} 0
+              </p>
+            </li>
+            {% endfor %}
+            <!-- <li class="li-resume">
+              <h2>Art Director - Facebook Inc</h2>
+              <span>2010 - Present</span>
+              <p>
+                Expenses as material breeding insisted building to in. Continual so distrusts pronounce 
+                by unwilling listening. Thing do taste on we manor.
+              </p>
+            </li>
+            <li class="li-resume">
+              <h2>Art Director - Facebook Inc</h2>
+              <span>2010 - Present</span>
+              <p>
+                Expenses as material breeding insisted building to in. Continual so distrusts pronounce 
+                by unwilling listening. Thing do taste on we manor.
+              </p>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="testmotional-header">
+      <span></span>
+      <h1>Testimonials</h1>
+    </div>
+    <div class="testmontional">
+      <div class="wrapper">
+        <div class="carousel owl-carousel">
+          {% for slide in slides %}
+          <div class="card card-1">
+            <h2>{{slide.name}}</h2>
+            <h4>{{slide.job}}</h4>
+            <p>
+              {{slide.text}}
+            </p>
+          </div>
+          {% endfor %}
+          <!-- <div class="card card-2">
+            <h2>Jack Garrat</h2>
+            <h4>Freelancer</h4>
+   
+            <p>
+                Great designer! he finished our work wonderfully and just in time. thanks for everything.
+            </p>
+        </div>
+        <div class="card card-3">
+            <h2>Jack Garrat</h2>
+            <h4>Freelancer</h4>
+
+            <p>
+                Great designer! he finished our work wonderfully and just in time. thanks for everything.
+            </p>
+        </div>
+        <div class="card card-4">
+            <h2>Jack Garrat</h2>
+            <h4>Freelancer</h4>
+      
+            <p>
+                Great designer! he finished our work wonderfully and just in time. thanks for everything.
+            </p>
+        </div>
+        <div class="card card-5">
+            <h2>Jack Garrat</h2>
+            <h4>Freelancer</h4>
+ 
+            <p>
+                Great designer! he finished our work wonderfully and just in time. thanks for everything.
+            </p>
+        </div>
+        <div class="card card-6">
+            <h2>Jack Garrat</h2>
+            <h4>Freelancer</h4>
+        
+            <p>
+                Great designer! he finished our work wonderfully and just in time. thanks for everything.
+            </p>
+        </div>
+        <div class="card card-7">
+            <h2>Jack Garrat</h2>
+            <h4>Freelancer</h4>
+
+            <p>
+                Great designer! he finished our work wonderfully and just in time. thanks for everything.
+            </p>
+        </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

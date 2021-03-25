@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 .blog{
     margin-top: 37px;
     width: 107%;
@@ -48,9 +49,8 @@
     cursor: pointer;
     transition: 0.5s;
 }
-.blogbox span{
-
-    margin-top: 10px;
+.blogbox .blogcatagory{
+    margin-top: 20px;
     font-weight: 400;
     font-size: 13px;
     line-height: 19px;
@@ -70,6 +70,7 @@
 .blogbox p{
     padding-left: 10px;
     margin-top: 10px;
+    margin-bottom: 10px;
     font-weight: 400;
     line-height: 18px;
     font-size: 13px;
@@ -78,6 +79,11 @@
 .blogdate{
     padding-left: 10px;
     padding-bottom: 5px;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: #505050 !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
 }
 .blogbox img{
     width: 100%;

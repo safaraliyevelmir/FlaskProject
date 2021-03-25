@@ -1,0 +1,92 @@
+{% extends "app/base.html" %}
+{% block pages %}
+<section class="portfolio" id="menu3">
+    <div class="portfoliodiv">
+      <div class="portfolio-head">
+        <span></span>
+        <h1>Portfolio</h1>
+      </div>
+      <div class="portfolio-menu">
+        <ul>
+          <li><a id="all1" onclick="filter()" style="color: #d81300;">All</a></li>
+          <li><a id="cv1" onclick="filter2()">CV</a></li>
+          <li><a id="other1" onclick="filter3()">Other</a></li>
+        </ul>
+      </div>
+      <div class="portfolio-grid">
+        <a href="/portfolio">
+          <div class="kutu cv">
+            <img src="static/app/img/work-01.jpg" alt="">
+            <div class="info">
+              <h1>Babel Admin</h1>
+              <p>An admin template design.</p>
+            </div>
+          </div>
+        </a>
+        <a href="portfolio.html">
+          <div class="kutu cv">
+            <img src="static/app/img/work7 (1).jpg" alt="">
+            <div id="cv" class="info">
+              <h1>Babel Admin</h1>
+              <p>An admin template design.</p>
+            </div>
+          </div>
+        </a>
+        <a href="portfolio.html">
+          <div class="kutu cv">
+            <img src="static/app/img/work8.jpg" alt="">
+            <div class="info">
+              <h1>Babel Admin</h1>
+              <p>An admin template design.</p>
+            </div>
+          </div>
+        </a>
+        <a href="portfolio.html">
+          <div class="kutu cv">
+            <img src="static/app/img/work2.jpg" alt="">
+            <div class="info">
+              <h1>Babel Admin</h1>
+              <p>An admin template design.</p>
+            </div>
+          </div>
+        </a>
+        <a href="portfolio.html">
+          <div class="kutu cv">
+            <img src="static/app/img/work3.jpg" alt="">
+            <div class="info">
+              <h1>Babel Admin</h1>
+              <p>An admin template design.</p>
+            </div>
+          </div>
+        </a>
+        <a href="portfolio.html">
+          <div class="kutu other">
+            <img src="static/app/img/work4.jpg" alt="">
+            <div class="info">
+              <h1>Babel Admin</h1>
+              <p>An admin template design.</p>
+            </div>
+          </div>
+        </a>
+        <a href="portfolio.html">
+          <div class="kutu other">
+            <img src="static/app/img/work5.jpg" alt="">
+            <div class="info">
+              <h1>Babel Admin</h1>
+              <p>An admin template design.</p>
+            </div>
+          </div>
+        </a>
+        <a href="portfolio.html">
+          <div class="kutu other">
+            <img src="static/app/img/work6.jpg" alt="">
+            <div class="info">
+              <h1>Babel Admin</h1>
+              <p>An admin template design.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -1,6 +1,7 @@
-{% extends "admin/base.html" %}
+{% extends 'admin/base.html' %}
 {% block pages %}
 <div class="container-fluid">
+    <!-- Page-Title -->
     <div class="row">
         <div class="col-sm-12">
             <div class="page-title-box">
@@ -8,54 +9,50 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0);">Admin</a></li>
                         <li class="breadcrumb-item"><a href="javascript:void(0);">Blog Pages</a></li>
-                        <li class="breadcrumb-item active">Blog Posts</li>
+                        <li class="breadcrumb-item active">Blog Comments</li>
                     </ol>
                 </div>
-                <h4 class="page-title">Blog Posts</h4>
+                <h4 class="page-title">Blog Comments</h4>
             </div>
             <!--end page-title-box-->
         </div>
         <!--end col-->
     </div>
+    <!-- end page title end breadcrumb -->
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="mt-0 header-title">Blog Table</h4>
+                    <h4 class="mt-0 header-title">Comment Table</h4>
                     <table id="datatable" class="table table-bordered dt-responsive nowrap"
                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Title</th>
-                                <th>Catagory</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Comment</th>
                                 <th class="text-center">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% for blogpost in blogpost %}
+                            {% for comments in comments %}
                             <tr>
-                                <td>{{blogpost.id}}</td>
-                                <td>{{blogpost.title}}</td>
-                                <td>{{blogpost.catagory.name}}</td>
+                                <td>{{comments.id}}</td>
+                                <td>{{comments.name}}</td>
+                                <td>{{comments.email}}</td>
+                                <td>{{comments.comment}}</td>
                                 <td class="text-center">
-                                    <a id="bEdit" type="button" class="btn btn-sm btn-soft-success btn-circle mr-2"
-                                        href="/admin/editblog/{{blogpost.id}}"><i class="dripicons-pencil"></i></a>
-                                    <a class="btn btn-sm btn-soft-danger btn-circle" id="bElim"
-                                        href="/admin/deleteblogpost/{{blogpost.id}}" aria-hidden="true"><i
-                                            class="dripicons-trash"></i></a>
-                                    <a class="btn btn-sm btn-soft-warning btn-circle" id="bElim"
-                                        href="/blogpost/{{blogpost.url}}" aria-hidden="true"><i
-                                            class="dripicons-folder-open"></i></a>
+                                    <a class="btn btn-sm btn-soft-danger btn-circle" id="bElim" href="/admin/blog/deletecomment/{{comments.id}}"
+                                        aria-hidden="true"><i class="dripicons-trash"></i></a>
                                 </td>
                             </tr>
                             {% endfor %}
                         </tbody>
                     </table>
-
                 </div>
             </div>
         </div> <!-- end col -->
     </div> <!-- end row -->
-</div>
+</div><!-- container -->
 {% endblock %}
