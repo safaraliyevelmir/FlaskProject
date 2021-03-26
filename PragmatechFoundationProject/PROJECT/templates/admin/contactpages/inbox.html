@@ -1,0 +1,57 @@
+{% extends "admin/base.html" %}
+{% block pages %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-title-box">
+                <div class="float-right">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Admin</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Contact Pages</a></li>
+                        <li class="breadcrumb-item active">Inbox</li>
+                    </ol>
+                </div>
+                <h4 class="page-title">Inbox</h4>
+            </div>
+            <!--end page-title-box-->
+        </div>
+        <!--end col-->
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <table id="datatable" class="table table-bordered dt-responsive nowrap"
+                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Date</th>
+                                <th>Message</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for contactform in contactform %}
+                            <tr>
+                                <td>{{contactform.id}}</td>
+                                <td>{{contactform.name}}</td>
+                                <td>{{contactform.email}}</td>
+                                <td>{{contactform.date}}</td>
+                                <td>{{contactform.message}}</td>
+                                <td>
+                                    <a class="btn btn-sm btn-soft-primary btn-circle" id="bElim"  href="mailto:{{contactform.email}}"><i class="fas fa-paper-plane" aria-hidden="true"></i></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+</div>
+{% endblock %}

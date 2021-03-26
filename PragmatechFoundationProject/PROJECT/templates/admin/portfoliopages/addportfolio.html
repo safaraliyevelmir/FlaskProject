@@ -1,0 +1,101 @@
+{% extends "admin/base.html" %}
+{% block header %}
+
+<title>Admin Add Blog</title>
+<style>
+    textarea {
+        font-family: 'Roboto', sans-serif;
+    }
+</style>
+<!-- include libraries(jQuery, bootstrap) -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- include summernote css/js -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+{% endblock %}
+
+{% block pages %}
+
+<div class="container-fluid">
+    <!-- Page-Title -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-title-box">
+                <div class="float-right">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Admin</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Blog Pages</a></li>
+                        <li class="breadcrumb-item active">Add Blog</li>
+                    </ol>
+                </div>
+                <h4 class="page-title">Add Blog Post</h4>
+            </div>
+            <!--end page-title-box-->
+        </div>
+        <!--end col-->
+    </div>
+    <!-- end page title end breadcrumb -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mt-0 header-title">Add Blog Post</h4>
+                    <form action="/admin/addportfolio" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="title" placeholder="Title" id="example-text-input"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="subtitle" placeholder="Subtitle"
+                                id="example-text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="url" placeholder="url" id="example-text-input"
+                                required>
+                        </div>
+                        <div class="custom-file mb-3">
+                            <input type="file" class="custom-file-input" name="image" id="customFile" required>
+                            <label class="custom-file-label" for="customFile">Choose image</label>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label text-left" style="font-size: 17px;">Catagory</label>
+                            <div class="col-12">
+                                <select name="catagory" class="form-control">
+                                    {% for catagory in catagory %}
+                                    <option value="{{catagory.id}}">{{catagory.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <textarea name="content" id="aboutmedit"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-gradient-primary ml-2">Send</button>
+                        </div>
+                    </form>
+                </div>
+                <!--end card-body-->
+            </div>
+            <!--end card-->
+        </div>
+        <!--end col-->
+    </div>
+    <!--end row-->
+</div><!-- container -->
+
+<script>
+    $(document).ready(function () {
+        $('#aboutmedit').summernote();
+    });
+    $('#aboutmedit').summernote({
+        height: 300, // set editor height
+        minHeight: null, // set minimum height of editor
+        maxHeight: null, // set maximum height of editor
+        focus: true // set focus to editable area after initializing summernote
+    });
+</script>
+{% endblock %}

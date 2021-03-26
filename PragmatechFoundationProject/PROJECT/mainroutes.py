@@ -37,7 +37,9 @@ def resumepage():
 
 @app.route('/portfolio')
 def portfolio():
-    return render_template('app/portfoliopage.html') 
+    portfolio=Portfolio.query.all()
+    # catagory=PortfolioCatagory.query.all(), catagory=catagory
+    return render_template('app/portfoliopage.html', portfolio=portfolio) 
 
 # Main Blog
 
@@ -51,7 +53,8 @@ def resume():
 
 @app.route('/contact')
 def contact():
-    return render_template('app/contactpage.html')
+    contactform=Contactform.query.all()
+    return render_template('app/contactpage.html',contactform=contactform)
 
 # Main Portfolio Single
 

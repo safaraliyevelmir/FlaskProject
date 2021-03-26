@@ -66,6 +66,26 @@ class BlogPost(db.Model):
     catagory_post=db.Column(db.Integer, db.ForeignKey('Catagory.id'))
     post_comment=db.relationship('Comments', backref='BlogPost', lazy=True)
 
+
+class PortfolioCatagory(db.Model):
+    __tablename__="PortfolioCatagory"
+    id=db.Column(db.Integer, primary_key=True)
+    name=db.Column(db.String(120))
+
+    portfolio_catagory=db.relationship('Portfolio', backref='PortfolioCatagory', lazy=True)
+
+class Portfolio(db.Model):
+    __tablename__="Portfolio"
+    id=db.Column(db.Integer,primary_key=True)
+    url=db.Column(db.String(50))
+    title=db.Column(db.String(50))
+    subtitle=db.Column(db.String(50))
+    img=db.Column(db.String(120))
+    content=db.Column(db.Text)
+    
+
+    catagory_portfolio=db.Column(db.Integer, db.ForeignKey('PortfolioCatagory.id'))
+
 class Comments(db.Model):
     __tablename__="Comments"
     id=db.Column(db.Integer,primary_key=True)
@@ -106,6 +126,14 @@ class Skills(db.Model):
     percatage=db.Column(db.String(120))
 
     skill_catagory=db.Column(db.Integer, db.ForeignKey('SkillCatagory.id'))
+
+class Contactform(db.Model):
+    __tablename__='conactform'
+    id=db.Column(db.Integer, primary_key=True)
+    name=db.Column(db.String(120))
+    email=db.Column(db.String(120))
+    date=db.Column(db.Date)
+    message=db.Column(db.Text)
 
 
 

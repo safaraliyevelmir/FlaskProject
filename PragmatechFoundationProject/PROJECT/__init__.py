@@ -21,5 +21,6 @@ from PROJECT import data
 from PROJECT import resumeroutes
 from PROJECT import homepageroutes
 from PROJECT import blogpagesroutes
+from PROJECT import portfolioroutes
 from PROJECT import contactroutes
 from PROJECT import profileroutes

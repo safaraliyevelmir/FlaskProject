@@ -35,3 +35,23 @@ def deletecontact(id):
     db.session.delete(deletecontact)
     db.session.commit()
     return redirect('/admin/contact')
+
+
+@app.route('/addcontactform', methods=['GET','POST'])
+def addcontactform():
+    if request.method=='POST':
+        contactform=Contactform(
+            name=request.form['name'],
+            email=request.form['email'],
+            message=request.form['message'],
+            date=datetime.now()
+        )
+        db.session.add(contactform)
+        db.session.commit()
+        return redirect('/contact')
+    return render_template('/app/contactpage.html')
+
+@app.route('/admin/contactme')
+def contactmetable():
+    contactform=Contactform.query.all()
+    return render_template('/admin/contactpages/inbox.html', contactform=contactform)

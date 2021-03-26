@@ -100,7 +100,6 @@ def blogcatagory():
     catagory=Catagory.query.all()
     return render_template('admin/blogpages/blogcatagory.html', catagory=catagory)
 
-
 # Add Catagory
 @app.route('/admin/addblogcatagory', methods=['GET','POST'])
 def addcatagory():
