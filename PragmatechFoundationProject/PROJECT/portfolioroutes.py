@@ -52,12 +52,12 @@ def addportcatagory():
     return render_template('/admin/portfoliopages/portfoliocatagory.html')
 
 # Delete Catagory
-# @app.route('/admin/portfolio/deletecatagory/<id>', methods=['GET','POST'])
-# def deleteportfoliocatagory(id):
-#     deletecatagory=Catagory.query.get(id)
-#     db.session.delete(deletecatagory)
-#     db.session.commit()
-#     return redirect('/admin/portfoliocatagory')
+@app.route('/admin/portfolio/deletecatagory/<id>', methods=['GET','POST'])
+def deleteportfoliocatagory(id):
+    deletecatagory=PortfolioCatagory.query.get(id)
+    db.session.delete(deletecatagory)
+    db.session.commit()
+    return redirect('/admin/catagory')
 
 # # Edit Catagory
 # @app.route('/admin/portfolio/editcatagory/<id>', methods=['GET','POST'])

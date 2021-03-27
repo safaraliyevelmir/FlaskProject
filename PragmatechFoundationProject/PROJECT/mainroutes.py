@@ -14,15 +14,17 @@ def index():
     myservice = MyService.query.all()
     myservice2 = MyService2.query.all()
 
-    profile=Profile.query.all()
+    skillcatagory = SkillsCat.query.all()
+    skills = Skills.query.all()
+    return render_template('app/index.html',  aboutme=aboutme, myservice=myservice, myservice2=myservice2, skillcatagory=skillcatagory, skills=skills)
+
+
+@app.route('/base')
+def base():
+    profile = Profile.query.all()
 
     profileimg=Profileim.query.all()
-    
-    skillcatagory=SkillsCat.query.all()
-    skills=Skills.query.all()
-    return render_template('app/index.html',  aboutme=aboutme, myservice=myservice, myservice2=myservice2, profile=profile, profileimg=profileimg, skillcatagory=skillcatagory, skills=skills)
-
-
+    return render_template('app/base.html', profile=profile, profileimg=profileimg)
 # Resume Page
 
 @app.route('/resume')
@@ -39,8 +41,8 @@ def resumepage():
 @app.route('/portfolio')
 def portfolio():
     portfolio=Portfolio.query.all()
-    # catagory=PortfolioCatagory.query.all(), catagory=catagory
-    return render_template('app/portfoliopage.html', portfolio=portfolio) 
+    catagory=PortfolioCatagory.query.all()
+    return render_template('app/portfoliopage.html', portfolio=portfolio, catagory=catagory) 
 
 # Main Blog
 

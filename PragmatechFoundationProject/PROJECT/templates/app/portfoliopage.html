@@ -98,4 +98,109 @@
     $(this).addClass('active').siblings().removeClass('active');
   })
 </script>
-{% endblock %}
+ {% endblock %}
+<!--
+<div class="portfoliomain">
+  <div class="portfolioheader">
+    <h1>Portfolio</h1>
+    <span></span>
+  </div>
+  <section class="portfolio">
+    <ul class="filter">
+      <li class="list active" data-filter="all">All</li>
+      {% for catagorys in catagory %}
+      <li class="list" data-filter="{{catagorys.id}}">{{catagorys.name}}</li>
+      {% endfor %}
+       <li class="list" data-filter="web">Web Design</li>
+      <li class="list" data-filter="graphic">Motion Graphic</li>
+      <li class="list" data-filter="illustration">Illusration</li>
+      <li class="list" data-filter="photography">Photography</li> -->
+    <!-- </ul>
+    <div class="product">
+      {% for portfolioitems in portfolio %}
+      <div class="itembox {{catagory.id}}">
+        <img src="../../static/uploads/{{portfolioitems.img}}" alt="">
+        <div class="description">
+          <h1>{{portfolioitems.title}}</h1>
+          <span>{{portfolioitems.subtitle}}</span>
+        </div>
+      </div>
+      {% endfor %} -->
+      <!-- <div class="itembox graphic">
+        <img src="../../static/app/img/blog-1.jpg" alt="">
+        <div class="description">
+          <h1>Babel Admin</h1>
+          <span>An Admin Template.</span>
+        </div>
+      </div>
+      <div class="itembox illustration">
+        <img src="../../static/app/img/blog-1.jpg" alt="">
+        <div class="description">
+          <h1>Babel Admin</h1>
+          <span>An Admin Template.</span>
+        </div>
+      </div>
+      <div class="itembox photography">
+        <img src="../../static/app/img/blog-1.jpg" alt="">
+        <div class="description">
+          <h1>Babel Admin</h1>
+          <span>An Admin Template.</span>
+        </div>
+      </div>
+      <div class="itembox graphic">
+        <img src="../../static/app/img/blog-1.jpg" alt="">
+        <div class="description">
+          <h1>Babel Admin</h1>
+          <span>An Admin Template.</span>
+        </div>
+      </div>
+      <div class="itembox illustration">
+        <img src="../../static/app/img/blog-1.jpg" alt="">
+        <div class="description">
+          <h1>Babel Admin</h1>
+          <span>An Admin Template.</span>
+        </div>
+      </div>
+      <div class="itembox photography">
+        <img src="../../static/app/img/blog-1.jpg" alt="">
+        <div class="description">
+          <h1>Babel Admin</h1>
+          <span>An Admin Template.</span>
+        </div>
+      </div>
+      <div class="itembox graphic">
+        <img src="../../static/app/img/blog-1.jpg" alt="">
+        <div class="description">
+          <h1>Babel Admin</h1>
+          <span>An Admin Template.</span>
+        </div>
+      </div>
+      <div class="itembox illustration">
+        <img src="../../static/app/img/blog-1.jpg" alt="">
+        <div class="description">
+          <h1>Babel Admin</h1>
+          <span>An Admin Template.</span>
+        </div>
+      </div> 
+  </section>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function(){
+    $('.list').click(function(){
+      const value = $(this).attr('data-filter')
+      if ( value == 'all'){
+        $('.itembox').show('1000');
+      }
+      else{
+        $('.itembox').not('.'+value).hide('1000')
+        $('.itembox').filter('.'+value).show('1000')
+      }
+    })
+  })
+
+  $('.list').click(function(){
+    $(this).addClass('active').siblings().removeClass('active');
+  })
+</script>
+ -->

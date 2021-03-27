@@ -91,15 +91,15 @@
             <ul>
               {% for skill in skills %}
               <h1>{{skillcat}}</h1>
-              
+
               {% if skillcat.skill_catagory==skillcat.id %}
               <li>
                 <p>{{skill.name}}</p>
                 <div class="degreebar">
-                  <div class="degreepointer" style="width:{{skills.percatage}}%;"></div>
+                <div class="degreepointer" style="width:{{skills.percatage}}%;"></div>
               </li>
               {% endif %}
-                
+
               {% endfor %}
             </ul>
           </div>
@@ -110,4 +110,3 @@
   </section>
 </section>
 {% endblock %}
-
