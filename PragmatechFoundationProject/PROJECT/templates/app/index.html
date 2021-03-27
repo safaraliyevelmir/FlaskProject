@@ -80,21 +80,26 @@
   </section>
   <section class="skillsection">
     <div class="skills">
-      {% for skillcatagory in skillcatagory %}
+      {% for skillcat in skillcatagory %}
       <div class="skill">
         <div class="skilltitle">
           <span></span>
-          <h1>{{skillcatagory.name}} Skills</h1>
+          <h1>{{skillcat.name}} Skills</h1>
         </div>
         <div class="skillbox">
           <div class="skillitembox1">
             <ul>
-              {% for skills in skills %}
+              {% for skill in skills %}
+              <h1>{{skillcat}}</h1>
+              
+              {% if skillcat.skill_catagory==skillcat.id %}
               <li>
-                <p>{{skills.name}}</p>
+                <p>{{skill.name}}</p>
                 <div class="degreebar">
-                  <div class="degreepointer" style="width:{{skills.percantage}}%;"></div>
+                  <div class="degreepointer" style="width:{{skills.percatage}}%;"></div>
               </li>
+              {% endif %}
+                
               {% endfor %}
             </ul>
           </div>

@@ -17,6 +17,7 @@ def index():
     profile=Profile.query.all()
 
     profileimg=Profileim.query.all()
+    
     skillcatagory=SkillsCat.query.all()
     skills=Skills.query.all()
     return render_template('app/index.html',  aboutme=aboutme, myservice=myservice, myservice2=myservice2, profile=profile, profileimg=profileimg, skillcatagory=skillcatagory, skills=skills)
@@ -54,7 +55,8 @@ def resume():
 @app.route('/contact')
 def contact():
     contactform=Contactform.query.all()
-    return render_template('app/contactpage.html',contactform=contactform)
+    contact=Contact.query.all()
+    return render_template('app/contactpage.html',contactform=contactform,contact=contact)
 
 # Main Portfolio Single
 

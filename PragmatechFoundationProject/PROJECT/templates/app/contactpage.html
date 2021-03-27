@@ -28,11 +28,13 @@
         <span></span>
       </div>
       <ul class="contactul">
+        {% for contact in contact %}
         <li>
-          <span>Adress</span>
-          <p>107727 Santa Monica Boulevard Los Angeles</p>
+          <span>{{contact.header}}</span>
+          <p>{{contact.info}}</p>
         </li>
-        <li>
+        {% endfor %}
+        <!-- <li>
           <span>Phone</span>
           <p>+38 012-3456-7890</p>
         </li>
@@ -47,7 +49,7 @@
         <li>
           <span>Skype</span>
           <p>chrisjohnson85</p>
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>

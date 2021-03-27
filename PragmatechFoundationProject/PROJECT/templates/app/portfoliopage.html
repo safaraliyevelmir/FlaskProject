@@ -1,15 +1,4 @@
 {% extends "app/base.html" %}
-{% block header %}
-<style>
-  ul li:first-child{
-    color: #d81300;
-  }
-</style>
-<script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
-{% endblock %}
 {% block pages %}
 <section class="portfolio" id="menu3">
     <div class="portfoliodiv">
@@ -19,11 +8,9 @@
       </div>
       <div class="portfolio-menu">
         <ul>
-          <!-- {% for catagory in catagory %} -->
-          <li><a id="all1" onclick="filter()">{{catagory.name}}</a></li>
-          <!-- {% endfor %} -->
-          <!-- <li><a id="cv1" onclick="filter2()">CV</a></li>
-          <li><a id="other1" onclick="filter3()">Other</a></li> -->
+          <li><a id="all1" onclick="filter()" style="color: #d81300;">All</a></li>
+          <li><a id="cv1" onclick="filter2()">CV</a></li>
+          <li><a id="other1" onclick="filter3()">Other</a></li>
         </ul>
       </div>
       <div class="portfolio-grid">
@@ -102,9 +89,4 @@
       </div>
     </div>
   </section>
-  <!-- <script>
-    $("ul li").onclick(function(){
-      $('')
-    })
-  </script> -->
 {% endblock %}

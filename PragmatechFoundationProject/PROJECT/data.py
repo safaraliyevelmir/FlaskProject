@@ -118,7 +118,6 @@ class SkillsCat(db.Model):
     name=db.Column(db.String(120))
 
     skill_catagory=db.relationship('Skills', backref='skillscat',lazy=True)
-
 class Skills(db.Model):
     __tablename__='Skills'
     id=db.Column(db.Integer, primary_key=True)
