@@ -137,7 +137,9 @@
        margin-left: 100px;
        
     }
-    
+    .main nav {
+        justify-content: normal;
+    }
     .col-3{
         padding-right: 0px;
     }

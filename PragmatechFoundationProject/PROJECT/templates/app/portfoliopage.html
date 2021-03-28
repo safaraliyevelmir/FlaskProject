@@ -1,4 +1,39 @@
 {% extends "app/base.html" %}
+{% block profile %}
+<div class="profile">
+  <div class="profile-name">
+    <span class="name">
+      HENRY ROONEY
+    </span>
+    <span class="job">
+      Creative Designer
+    </span>
+  </div>
+  <div class="profile-image">
+    <img src="../../static/uploads/profile.jpg">
+  </div>
+  <div class="profile-info">
+    <ul class="profileinfolist">
+      {% for profile in profile %}
+      <li class="profileinfoitem">
+        <p>
+          <span>{{profile.infoheader}}:</span>
+          {{profile.informatio}}
+        </p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="cvbutton">
+    <div class="cvbuttonbox">
+      <a class="cvdownload" href="">CV Download</a>
+      <div class="downloadiconbox">
+        <i class="fas fa-download dwiconbox"></i>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
 {% block pages %}
 <div class="portfoliomain">
   <div class="portfolioheader">

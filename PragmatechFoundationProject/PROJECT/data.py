@@ -133,10 +133,3 @@ class Contactform(db.Model):
     email=db.Column(db.String(120))
     date=db.Column(db.Date)
     message=db.Column(db.Text)
-
-
-
-
-
-
-
