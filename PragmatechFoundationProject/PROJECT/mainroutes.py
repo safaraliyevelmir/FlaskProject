@@ -45,8 +45,8 @@ def portfolio():
     profile=Profile.query.all()
 
     profileimg=Profileim.query.all()
-    # catagory=PortfolioCatagory.query.all(), catagory=catagory
-    return render_template('app/portfoliopage.html', portfolio=portfolio,profile=profile, profileimg=profileimg) 
+    catagory=PortfolioCatagory.query.all()
+    return render_template('app/portfoliopage.html', portfolio=portfolio,profile=profile, profileimg=profileimg, catagory=catagory) 
 
 # Main Blog
 
@@ -88,6 +88,7 @@ def blog(url):
 
     profileimg=Profileim.query.all()
     return render_template('app/singleblog.html', blogpost=blogpost, catagory=catagory, comment=comment,profile=profile, profileimg=profileimg)
+   
 # Admin Index
 
 @app.route('/admin')

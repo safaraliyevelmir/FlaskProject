@@ -33,10 +33,11 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {% for portfolio in portfolio %}
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{portfolio.id}}</td>
+                                <td>{{portfolio.title}}</td>
+                                <td>{{portfolio.subtitle}}</td>
                                 <td class="text-center">
                                     <a id="bEdit" type="button" class="btn btn-sm btn-soft-success btn-circle mr-2"
                                         href=""><i class="dripicons-pencil"></i></a>
@@ -48,6 +49,7 @@
                                             class="dripicons-folder-open"></i></a>
                                 </td>
                             </tr>
+                            {% endfor %}
                        </tbody>
                     </table>
 

@@ -8,7 +8,8 @@ import os
 # Portfolio Admin
 @app.route('/admin/portfolio')
 def adminportfolio():
-    return render_template('/admin/portfoliopages/portfolio.html')
+    portfolio=Portfolio.query.all()
+    return render_template('/admin/portfoliopages/portfolio.html',portfolio=portfolio)
 
 # Add Portfolio
 @app.route('/admin/addportfolio', methods=['GET','POST'])
@@ -21,7 +22,6 @@ def addportfolio():
         portfoliopost=Portfolio(
             img=filename,
             title=request.form['title'],
-            url=request.form['url'],
             subtitle=request.form['subtitle'],
             content=request.form['content'],
             catagory_portfolio=int(request.form['catagory']),

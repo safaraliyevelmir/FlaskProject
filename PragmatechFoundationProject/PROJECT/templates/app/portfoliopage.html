@@ -43,13 +43,39 @@
   <section class="portfolio">
     <ul class="filter">
       <li class="list active" data-filter="all">All</li>
-      <li class="list" data-filter="web">Web Design</li>
+      {% for catagory in catagory %}
+      <li class="list" data-filter="{{catagory.id}}">{{catagory.name}}</li>
+      {% endfor %}
+      <!-- <li class="list" data-filter="web">Web Design</li>
       <li class="list" data-filter="graphic">Motion Graphic</li>
       <li class="list" data-filter="illustration">Illusration</li>
-      <li class="list" data-filter="photography">Photography</li>
+      <li class="list" data-filter="photography">Photography</li> -->
     </ul>
     <div class="product">
-      <div class="itembox web">
+      {% for portfolio in portfolio %}
+      <div class="itembox {{portfolio.catagory_portfolio}}">
+        <img src="../../static/uploads/{{portfolio.img}}" alt="">
+        <div class="description">
+          <h1> Admin</h1>
+          <span>An Admin Template.</span>
+        </div>
+      </div>
+      {% endfor %}
+      <!-- <div class="itembox graphic">
+        <img src="../../static/app/img/blog-1.jpg" alt="">
+        <div class="description">
+          <h1>Babel Admin</h1>
+          <span>An Admin Template.</span>
+        </div>
+      </div>
+      <div class="itembox illustration">
+        <img src="../../static/app/img/blog-1.jpg" alt="">
+        <div class="description">
+          <h1>Babel Admin</h1>
+          <span>An Admin Template.</span>
+        </div>
+      </div>
+      <div class="itembox photography">
         <img src="../../static/app/img/blog-1.jpg" alt="">
         <div class="description">
           <h1>Babel Admin</h1>
@@ -90,28 +116,7 @@
           <h1>Babel Admin</h1>
           <span>An Admin Template.</span>
         </div>
-      </div>
-      <div class="itembox photography">
-        <img src="../../static/app/img/blog-1.jpg" alt="">
-        <div class="description">
-          <h1>Babel Admin</h1>
-          <span>An Admin Template.</span>
-        </div>
-      </div>
-      <div class="itembox graphic">
-        <img src="../../static/app/img/blog-1.jpg" alt="">
-        <div class="description">
-          <h1>Babel Admin</h1>
-          <span>An Admin Template.</span>
-        </div>
-      </div>
-      <div class="itembox illustration">
-        <img src="../../static/app/img/blog-1.jpg" alt="">
-        <div class="description">
-          <h1>Babel Admin</h1>
-          <span>An Admin Template.</span>
-        </div>
-      </div>
+      </div> -->
   </section>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
