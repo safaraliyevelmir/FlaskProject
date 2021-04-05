@@ -89,8 +89,25 @@ def blog(url):
     profileimg=Profileim.query.all()
     return render_template('app/singleblog.html', blogpost=blogpost, catagory=catagory, comment=comment,profile=profile, profileimg=profileimg)
    
+# Hire me Routes
+
+@app.route('/addhireme', methods=['GET','POST'])
+def addhireme():
+    if request.method=='POST':
+        hireme=Hireme(
+            name=request.form['name'],
+            email=request.form['email'],
+            service=request.form['service'],
+            message=request.form['message']
+        )
+        db.session.add(hireme)
+        db.session.commit()
+        return redirect('/')
+    return render_template('/app/index.html')
+
 # Admin Index
 
 @app.route('/admin')
 def admin():
     return render_template('admin/index.html')
+

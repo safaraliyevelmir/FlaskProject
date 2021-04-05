@@ -8,7 +8,9 @@ class Slides(db.Model):
     name=db.Column(db.String(20))
     job=db.Column(db.String(20))
     text=db.Column(db.String(50))
-    
+
+
+
 class Eduhistory(db.Model):
     __tablename__='Eduhistory'
     id=db.Column(db.Integer,primary_key=True)
@@ -16,6 +18,8 @@ class Eduhistory(db.Model):
     startdate=db.Column(db.String(30))
     enddate=db.Column(db.String(30))
     text=db.Column(db.String(100))
+
+
 
 class Workhistory(db.Model):
     __tablename__='Workhistory'
@@ -25,10 +29,14 @@ class Workhistory(db.Model):
     enddate=db.Column(db.String(40))
     text=db.Column(db.String(100))
 
+
+
 class Aboutme(db.Model):
     __tablename__='Aboutme'
     id=db.Column(db.Integer,primary_key=True)
     content=db.Column(db.String(120))
+
+
 
 class MyService2(db.Model):
     __tablename__='MyService2'
@@ -36,7 +44,9 @@ class MyService2(db.Model):
     servicetitle=db.Column(db.String(50))
     serviceicon=db.Column(db.String(40))
     servicesubtitle=db.Column(db.String(50))
-    
+
+
+
 class MyService(db.Model):
     __tablename__='MyService'
     id=db.Column(db.Integer,primary_key=True)
@@ -44,12 +54,16 @@ class MyService(db.Model):
     serviceimage=db.Column(db.String(120))
     servicesubtitle=db.Column(db.String(50))
 
+
+
 class Catagory(db.Model):
     __tablename__="Catagory"
     id=db.Column(db.Integer,primary_key=True)
     name=db.Column(db.String(50))
 
     post_catagory=db.relationship('BlogPost', backref='catagory', lazy=True)
+
+
 
 class BlogPost(db.Model):
     __tablename__="BlogPost"
@@ -67,12 +81,15 @@ class BlogPost(db.Model):
     post_comment=db.relationship('Comments', backref='BlogPost', lazy=True)
 
 
+
 class PortfolioCatagory(db.Model):
     __tablename__="PortfolioCatagory"
     id=db.Column(db.Integer, primary_key=True)
     name=db.Column(db.String(120))
 
     portfolio_catagory=db.relationship('Portfolio', backref='PortfolioCatagory', lazy=True)
+
+
 
 class Portfolio(db.Model):
     __tablename__="Portfolio"
@@ -86,6 +103,8 @@ class Portfolio(db.Model):
 
     catagory_portfolio=db.Column(db.Integer, db.ForeignKey('PortfolioCatagory.id'))
 
+
+
 class Comments(db.Model):
     __tablename__="Comments"
     id=db.Column(db.Integer,primary_key=True)
@@ -95,11 +114,15 @@ class Comments(db.Model):
     date=db.Column(db.Date)
     blog_id=db.Column(db.Integer, db.ForeignKey('BlogPost.id'))
 
+
+
 class Contact(db.Model):
     __tablename__='Contact'
     id=db.Column(db.Integer,primary_key=True)
     header=db.Column(db.String(20))
     info=db.Column(db.String(50))
+
+
 
 class Profile(db.Model):
     __tablename__='Profile'
@@ -107,10 +130,14 @@ class Profile(db.Model):
     infoheader=db.Column(db.String(120))
     informatio=db.Column(db.String(120))
 
+
+
 class Profileim(db.Model):
     __tablename__='Profileimg'
     id=db.Column(db.Integer,primary_key=True)
     img=db.Column(db.String(120))
+
+
 
 class SkillsCat(db.Model):
     __tablename__='SkillCatagory'
@@ -118,6 +145,9 @@ class SkillsCat(db.Model):
     name=db.Column(db.String(120))
 
     skill_catagory=db.relationship('Skills', backref='skillscat',lazy=True)
+
+
+
 class Skills(db.Model):
     __tablename__='Skills'
     id=db.Column(db.Integer, primary_key=True)
@@ -126,10 +156,22 @@ class Skills(db.Model):
 
     skill_catagory=db.Column(db.Integer, db.ForeignKey('SkillCatagory.id'))
 
+
+
 class Contactform(db.Model):
     __tablename__='conactform'
     id=db.Column(db.Integer, primary_key=True)
     name=db.Column(db.String(120))
     email=db.Column(db.String(120))
     date=db.Column(db.Date)
+    message=db.Column(db.Text)
+
+
+
+class Hireme(db.Model):
+    __tablename__='Hireme'
+    id=db.Column(db.Integer, primary_key=True)
+    name=db.Column(db.String(120))
+    email=db.Column(db.String(120))
+    service=db.Column(db.String(120))
     message=db.Column(db.Text)

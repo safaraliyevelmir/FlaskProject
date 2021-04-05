@@ -1,6 +1,12 @@
 .col-3{
     width: 25%;
 }
+.openmenu-ul{
+    display: none;
+}
+button.openmenu1{
+    display: none;
+}
 @media screen and (max-width: 1200px){
     #social2{
         display: none;
@@ -15,9 +21,12 @@
         width: 105%;
     }
     .blog{
-        width: 105%;
+        width: 107%;
     }
     .contactmain{
+        width: 105%;
+    }
+    .portfoliomain{
         width: 105%;
     }
     .degreebar{
@@ -41,7 +50,6 @@
         margin-left: 60px;
     }
 
-
 }
 @media screen and (max-width: 1000px){
     .footer{
@@ -62,8 +70,8 @@
     .main{
         width: 136%;
     }
-    .portfolio{
-        width: 143%;
+    .portfoliomain{
+        width: 145%;
     }
     .resume{
         width: 143%;
@@ -75,7 +83,7 @@
         width: 142%;
     }
     .blog{
-        width: 142% !important;
+        width: 144% !important;
     }
     .contactmain{
         width: 142%;
@@ -110,6 +118,10 @@
     #mail{
         margin-left: 72px;
     }
+    i.fa.fa-graduation-cap{
+        top: 592px;
+        left: 39px;
+    }
     .service4{
         margin-top: 30px;
     }
@@ -136,6 +148,10 @@
        display: block;
        margin-left: 100px;
        
+    }
+    i.fa.fa-graduation-cap{
+        top: 652px;
+        left: 39px;
     }
     .main nav {
         justify-content: normal;
@@ -187,10 +203,17 @@
         width: 150%;
     }
     .blog{
-        width: 150%;
+        width: 152%;
     }
     .contactmain{
         width: 150%;
+    }
+    .portfoliomain{
+        width: 150%;
+    }
+    .itembox{
+        width: 200px;
+        height: 200px;
     }
     .responsivmenu-ul{
         display: block !important;
@@ -266,11 +289,98 @@
         display: block;
     }
 }
-@media screen and (max-width: 570px){
+@media screen and (max-width: 575px){
+    .openmenu2{
+        display: none;
+    }
+    button.openmenu1{
+        display: block;
+        display: block;
+        position: relative;
+        left: 278px;
+    }
+    .respensivemenuhome{
+        display: flex;
+    }
+    i.fa.fa-graduation-cap{
+        top: 635px;
+        left: 39px;
+    }
+    .openmenu1{
+        outline: none;
+        border: none;
+        padding-top: 10xpx !important;
+        background: none;
+        margin-top: 20px;
+        position: relative;
+        left: 64px;
+    }
     #social2{
         display: none !important;
     }
     #social1{
         display: inline;
+    }
+}
+@media screen and (max-width: 567px){
+    i.fa.fa-graduation-cap{
+        top: 652px;
+        left: 39px;
+    }
+}
+@media screen and (max-width: 555px){
+
+    button.openmenu1{
+        left: 270px;
+    }
+}
+@media screen and (max-width: 534px){
+    i.fa.fa-graduation-cap{
+        top: 668px;
+        left: 39px;
+    }
+}
+@media screen and (max-width: 500px){
+
+    button.openmenu1{
+        left: 226px;
+    }
+}
+@media screen and (max-width: 450px){
+
+    button.openmenu1{
+        position: relative;
+        left: 200px;
+    }
+}
+@media screen and (max-width: 424px){
+
+    button.openmenu1{
+        position: relative;
+        left: 180px;
+    }
+}
+@media screen and (max-width: 400px){
+
+    button.openmenu1{
+        position: relative;
+        left: 170px;
+    }
+}
+@media screen and (max-width: 376px){
+
+    button.openmenu1{
+        position: relative;
+        left: 117px;
+    }
+}
+@media screen and (max-width: 376px){
+
+    button.openmenu1{
+        position: relative;
+        left: 60px;
+    }
+    .resume{
+        width: 160%;
     }
 }

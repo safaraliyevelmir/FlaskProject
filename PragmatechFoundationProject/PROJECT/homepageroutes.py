@@ -92,7 +92,7 @@ def deleteservice2(id):
     deleteservice2=MyService2.query.get(id)
     db.session.delete(deleteservice2)
     db.session.commit()
-    return redirect('/admin/homepages/myservice')
+    return redirect('/admin/myservice')
 
 
 # Skills  Page

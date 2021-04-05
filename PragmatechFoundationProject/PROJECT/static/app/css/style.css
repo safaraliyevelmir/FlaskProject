@@ -4,10 +4,81 @@ body {
   font-family: 'Roboto', sans-serif !important;
   
 }
+.popup-form{
+  border-radius: 7px;
+  width: 350px;
+  height: 521px;
+  background-color:white;
+  position: absolute;
+  margin-left: 50%;
+  transform: translate(-50%, 15%);
+  box-shadow: 2px 1px 27px -5px rgba(0,0,0,0.58);
+  -webkit-box-shadow: 2px 1px 27px -5px rgba(0,0,0,0.58);
+  -moz-box-shadow: 2px 1px 27px -5px rgba(0,0,0,0.58);
+}
+.popup-form form{
+  margin: 0px 40px 0px 40px;
+}
+.popup-form form input[type=text], select, input[type=email], textarea{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Roboto',sans-serif;
+}
+.popup-form form input[type=submit]{
+  width: 100%;
+  background-color: #d81300;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 22px;
+}
+.popup-form form input[type=submit]:hover{
+  background-color: #ea2c19;
+}
+.popup-form form label{
+  font-family: 'Roboto',sans-serif;
+}
+#mail:hover{
+  cursor: pointer;
+}
+.popup-form .hiremeheader{
+  margin-left: 50%;
+  transform: translate(-50%,-50%);
+  margin-top: 30px;
+  position: relative;
+  display: inline-block;
+}
+.popup-form .hiremeheader h1{
+  font-size: 	1.2rem;
+  font-weight: 500;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+}
+.popup-form .hiremeheader span{
+  background-color: #ea2c19;
+  position: absolute;
+  height: 7px;
+  width: 100%;
+  bottom: 0;
+  opacity: 0.4;
+}
+button.openmenu:hover{
+  cursor: pointer;
+}
 .openmenu-ul{
   display: block;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: white;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -18,16 +89,22 @@ body {
   height: auto;
   border-radius: 8px
 }
-.openmenu-ul li{
+.openmenu-ul li, .openmenu-ul li a{
   cursor: pointer;
+  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 10px;
+  text-decoration: none;
+  color: black;
+}
+.openmenu-ul li a:hover{
+  color: #ea2c19;
 }
 .openmenu-ul ul{
   text-align: center;
-
 }
 .openmenu-ul ul li{
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 .container {
   height: 1000px;
@@ -323,10 +400,10 @@ body {
   padding-top: 35%;
   font-size: 20px;
 }
-.homebutton i{
+.homebutton, .homebutton-r i{
   color: white;
 }
-.homebutton:hover{
+.homebutton, .homebutton-r:hover{
   background-color: #ea2c19;
   cursor: pointer;
 }

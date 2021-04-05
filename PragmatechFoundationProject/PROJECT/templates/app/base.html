@@ -70,10 +70,15 @@
                   <li> <a class="li" id="btn5" href="/contact">Contact</a></li>
                 </ul>
                 <ul class="responsivmenu-ul" style="display: none;">
-                  <div class="homebutton-r">
-                    <div class="homeicon-r">
-                      <i class="fas fa-home"></i>
+                  <div class="respensivemenuhome">
+                    <div class="homebutton-r">
+                      <div class="homeicon-r">
+                        <i class="fas fa-home"></i>
+                      </div>
                     </div>
+                    <button style="outline: none; border: none; background: none;" class="openmenu openmenu1">
+                      <i class="fas fa-align-justify"></i>
+                    </button>
                   </div>
                 </ul>
               </div>
@@ -91,26 +96,26 @@
                 </div>
                 <div id="mail">
                   <div id="mailbox">
-                    <a id="mailto" href="mailto: abc@example.com">Mail me</a>
+                    <a id="mailto">Hire me</a>
                     <div id="mailiconbox">
                       <i id="mailicon" class="fab fa-telegram-plane"></i>
                     </div>
 
                   </div>
                 </div>
-                <button style="outline: none; border: none; background: none;" class="openmenu" onclick="openmenu()">
+                <button style="outline: none; border: none; background: none;" class="openmenu openmenu2">
                   <i class="fas fa-align-justify"></i>
                 </button>
               </div>
             </div>
             {% endblock %}
 
-            <div class="openmenu-ul close" id="openmenu">
+            <div class="openmenu-ul" id="openmenu">
               <ul>
-                <!-- <li> <a class="" id="btn2" onclick="myFunction()">Resume</a></li>
-                <li> <a class="" id="btn3" onclick="myFunction3()">Portfolio</a></li>
-                <li> <a class="" id="btn4">Blog</a></li>
-                <li> <a class="" id="btn5" onclick="myFunction5()">Contact</a></li> -->
+                <li> <a href="/resume">Resume</a>
+                <li> <a href="/portfolio">Portfolio</a></li>
+                <li> <a href="/blog">Blog</a></li>
+                <li> <a href="/contact">Contact</a></li>
               </ul>
             </div>
           </nav>
@@ -128,8 +133,30 @@
           </div>
         </div>
       </div>
+      <div class="popup-form" style="display: none;">
+        <div class="hiremeheader">
+          <h1>Hire Me</h1>
+          <span></span>
+        </div>
+        <form action="/addhireme", method="POST">
+          <label for="fname">Fullname:</label>
+          <input name="name" type="text" placeholder="Fullname" id="fname">
+
+          <label for="femail">Email:</label>
+          <input name="email" type="email" id="femail" placeholder="Email">
+
+          <label for="fselect">Choose Service:</label>
+          <input name="service" type="text" id="fserlect" placeholder="Service"> 
+
+          <label for="message">Message:</label>
+          <textarea name="message" placeholder="Message" id="fmessage" cols="14" rows="5" style="resize: none;"></textarea>
+
+          <input type="submit">
+        </form>
+      </div>
     </div>
   </div>
+   <!-- Caruosel -->
   <script>
     $(".carousel").owlCarousel({
       margin: 20,
@@ -151,6 +178,18 @@
         }
       }
     });
+  </script>
+  <!--Open Menu-->
+  <script>
+    $("button.openmenu").click(function(){
+      $(".openmenu-ul").toggle(500)
+    })  
+  </script>
+  <!--Open Form-->
+  <script>
+    $('#mailbox').click(function(){
+      $('.popup-form').toggle(1000);
+    })
   </script>
   <!-- <script src="../../static/app/js/app.js"></script> -->
 </body>
