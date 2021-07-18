@@ -1,6 +1,0 @@
-from PROJECT import app
-
-
-
-
-
